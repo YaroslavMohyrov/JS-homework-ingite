@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        var evenArr = [];
+        var posArr = [];
+        var numArr = [1,2,31,24,-67,5,3,555,79,-4,21,33,89,-90];
+        var max = numArr[0];
+        var min = numArr[0];
+
+        for (var num in numArr) {
+            if (numArr[num] > max) max = numArr[num];
+            if (numArr[num] < min) min = numArr[num];
+            if (numArr[num] % 2 == 0) evenArr.push(numArr[num]);
+            if (numArr[num] > 0) posArr.push(numArr[num]);
+        }
+
+        alert("max: "+max+"\nmin: "+min+"\npositive nums: "+posArr.join(" ")+"\neven nums: "+evenArr.join(" "));
+        
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
