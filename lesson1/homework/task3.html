@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        function bigToSmall(arr) {
+            var buf;
+            var singleArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                for (var j = 0; j < arr[i].length; j++) {
+                    singleArr.push(arr[i][j]);
+                }
+            }
+            singleArr.sort(function(a, b) {
+                return (a <= b) ? 1 : -1
+            })
+            return singleArr.join(">");
+        }
+
+        var arr1 = [
+            [5, 10],
+            [12, 61],
+            [84, 222]
+        ];
+        //ступенчатый массив
+        var arr2 = [
+            [-41, 54, 1],
+            [90, 7],
+            [45]
+        ];
+
+        alert(bigToSmall(arr2));
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

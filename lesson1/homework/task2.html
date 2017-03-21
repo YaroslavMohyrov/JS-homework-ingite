@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+
+        function sortArr(arr) {
+            var buf;
+            for (var i = arr.length-1; i > 0; i--) {
+                for (var j = 0; j < i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        buf = arr[j + 1];
+                        arr[j + 1] = arr[j];
+                        arr[j] = buf;
+                    }
+                }
+            }
+            return arr;
+        }
+
+        var arr1 = [5, 10, 12, 61, 84, 222];
+        var arr2 = [-41, 54, 1, 90, 7, -87];
+        var arr3 = [100, 83, 72, 60, 48]
+
+        alert(sortArr(arr3).join(" "));
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
