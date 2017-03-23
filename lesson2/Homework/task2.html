@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        function strCount(obj) {
+            var count = 0;
+
+            for (prop in obj) {
+                if (typeof(obj[prop]) == "string") {
+                    count++
+                } else if (typeof(obj[prop]) == "object") {
+                    count += strCount(obj[prop])
+                }
+            }
+            return count;
+        }
+
+        //проверка
+        alert(strCount({
+            first: "1",
+            second: "2",
+            third: false,
+            fourth: ["anytime", 2, 3, 4],
+            fifth: null
+        }));
+        alert(strCount({
+            first: 5,
+            second: "блабла",
+            third: {
+                first: {
+                    first: {
+                        str: "here I am"
+                    }
+                }
+            },
+            fourth: true,
+            fifth: null
+        }));
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
