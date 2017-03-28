@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        function sumArgs() {
+            var sum = 0;
+            for (arg in arguments) {
+                sum += arguments[arg];
+            }
+            return sum;
+        }
+        var args = [4, 8, 2, 9];
+
+        alert(sumArgs.apply(null, args));
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

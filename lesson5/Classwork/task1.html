@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        function printNumber() {
+            var num = 1;
+            var interval = setInterval(function() {
+                console.log(num++)
+            }, 100);
+            setTimeout(function() {
+                clearInterval(interval)
+            }, 2010); //10 дополнительных мс для вывода последнего числа
+        }
+
+        printNumber();
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

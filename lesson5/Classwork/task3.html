@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        function getType(variable) {
+            try {
+                if (arguments.length > 1) throw new SyntaxError("Превышено допустимое количество аргументов");
+                return typeof variable;
+            } catch (e) {
+                return e.message;
+            }
+        }
+
+        alert(getType(5));
+        alert(getType("blabla"));
+        alert(getType(true));
+        alert(getType(5, 4));
+        alert(getType(undefined));
+        alert(getType(null));
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

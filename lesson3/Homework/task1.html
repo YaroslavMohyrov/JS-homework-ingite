@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        function add(num) {
+            add.sum = 0;
+            add.sum += num;
+
+            function inner(num) {
+                add.sum += num;
+                return inner;
+            }
+            inner.toString = function() {
+                return add.sum
+            }
+            return inner;
+        }
+
+        alert(add(4)(3)(5));
+        alert(add(56)(12)(5));
+        alert(add(5));
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

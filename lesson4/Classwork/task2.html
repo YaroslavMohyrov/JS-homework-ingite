@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        var user = {
+            firstName: "Вася",
+            sayHi: function() {
+                alert(this.firstName);
+            }
+        };
+
+        var f = user.sayHi.bind(user);
+        f();
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

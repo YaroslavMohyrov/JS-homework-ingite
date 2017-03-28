@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="timer" style="height: 1em;"></div>
+    <script>
+        var amount = +prompt("Установите таймер:", "10");
+
+        var container = document.getElementById('timer');
+        container.innerHTML = amount;
+        amount--;
+
+        var interval = setInterval(tick, 1000);
+
+        function tick() {
+            container.innerHTML = amount;
+            amount--;
+            if (container.innerHTML == 0) stop();
+        }
+
+        function stop() {
+            clearInterval(interval);
+            alert("Отсчет закончен");
+        }
+    </script>
+</body>
+
+</html>

@@ -4,6 +4,18 @@
 <head>
     <meta charset="utf-8">
     <script>
+        function Summator() {
+            this.sum = function() {
+                return this.a + this.b;
+            }
+            this.run = function() {
+                this.a = +prompt("a: ");
+                this.b = +prompt("b: ");
+                alert('сумма: ' + this.sum());
+            }
+        }
+
+        new Summator().run();
     </script>
 </head>
 

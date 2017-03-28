@@ -4,6 +4,25 @@
 <head>
     <meta charset="utf-8">
     <script>
+        function Calculator() {
+            this.read = function() {
+                this.a = +prompt("a:");
+                this.b = +prompt("b:");
+            }
+
+            this.sum = function() {
+                return this.a + this.b;
+            }
+
+            this.mul = function() {
+                return this.a * this.b;
+            }
+        }
+
+        var calculator = new Calculator();
+        calculator.read();
+        alert('сумма: ' + calculator.sum());
+        alert('произведение: ' + calculator.mul());
     </script>
 </head>
 

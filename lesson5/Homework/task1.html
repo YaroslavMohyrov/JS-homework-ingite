@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        function runExp() {
+            var exp = prompt("Введите выражение: ");
+            try {
+                res = eval(exp);
+                if (isNaN(res)) throw new SyntaxError("Невозможно вычислить");
+                return res;
+            } catch (e) {
+                return e.message;
+            }
+        }
+
+        alert(runExp());
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
