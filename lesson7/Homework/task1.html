@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #first {
+            background-color: lightsalmon;
+            left: 0;    
+        }
+        #second {
+            background-color: lightseagreen;
+            left: 150px;
+        }
+        #third {
+            background-color: lightslategray;
+            left: 300px;
+        }
+        .block {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first" class="block">Первый блок</div>
+    <div id="second" class="block">Второй блок</div>
+    <div id="third" class="block">Третий блок</div>
+
+  <script>
+      var blocks = document.getElementsByClassName("block");
+      function changePos() {
+          for (var i = 0; i < blocks.length; i++) {
+              blocks[i].style.top = (Math.random()*100)+"%";
+              blocks[i].style.left = (Math.random()*100)+"%";
+          }
+      }
+      setInterval(changePos, 1000);
+  </script>
+</body>
+
+</html>

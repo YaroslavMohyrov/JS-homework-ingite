@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        a {
+            background-color: lightsalmon;
+            position: absolute;
+            top: 300px;
+            left: 300px;
+        }
+        div {
+            background-color: lightseagreen;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">Anchor</a>
+    <div>Block</div>
+  <script>
+      function positionAt(anchor, position, elem) {
+          switch (position) {
+              case "top":
+                elem.style.top = anchor.getBoundingClientRect().top - elem.offsetHeight + "px";
+                elem.style.left = anchor.getBoundingClientRect().left + "px";
+                break;
+              case "right":
+                elem.style.left = anchor.getBoundingClientRect().right + "px";
+                elem.style.top = anchor.getBoundingClientRect().top + "px";
+                break;
+              case "bottom":
+                elem.style.top = anchor.getBoundingClientRect().bottom + "px";
+                elem.style.left = anchor.getBoundingClientRect().left + "px";
+          }
+      }
+
+      var anchor = document.getElementsByTagName('a')[0];
+      var elem = document.getElementsByTagName('div')[0];
+
+      positionAt(anchor, "right", elem);
+
+  </script>
+</body>
+
+</html>
