@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .group {
+            margin: 20px;
+        }
+        
+        label {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" type="post">
+        <div class="group">
+            <label for="login">Логин</label>
+            <input type="text" id="login">
+        </div>
+        <div class="group">
+            <label for="password">Пароль</label>
+            <input type="text" id="password">
+        </div>
+        <div class="group">
+            <label for="telephone">Телефон</label>
+            <input type="text" id="telephone">
+        </div>
+        <div class="group">
+            <button type="submit">Отправить</button>
+        </div>
+    </form>
+    <script>
+        document.forms[0].addEventListener("submit", function(e) {
+            login.style.backgroundColor = 'white';
+            password.style.backgroundColor = 'white';
+            telephone.style.backgroundColor = 'white';
+            if (/\d/.test(login.value)) {
+                login.style.backgroundColor = 'red';
+                e.preventDefault();
+            }
+            if (/\$/.test(password.value)) {
+                password.style.backgroundColor = 'red';
+                e.preventDefault();
+            }
+            if (!/^\d+$/.test(telephone.value)) {
+                telephone.style.backgroundColor = 'red';
+                e.preventDefault();
+            }
+        }, false)
+    </script>
+</body>
+
+</html>
