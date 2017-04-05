@@ -31,7 +31,7 @@
             if (e.target.dataset.tooltip) {
                 var tip = document.createElement('div');
                 e.target.appendChild(tip);
-                tip.innerText = e.target.dataset.tooltip;
+                tip.innerHTML = e.target.dataset.tooltip;
                 tip.className = "tooltip";
                 tip.style.top = e.target.getBoundingClientRect().top - tip.offsetHeight - 5 + "px"; //5 чтобы подсказка не лежала вплотную на кнопке
                 tip.style.left = e.target.getBoundingClientRect().left + "px";

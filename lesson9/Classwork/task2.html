@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #scrollBtn {
+            position: fixed; 
+            bottom: 0; 
+            right: 0; 
+            width: 50px; 
+            height: 50px; 
+        }
+        body {
+            height: 2000px; 
+            background: linear-gradient(to bottom, white, black)
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 100vh; background-color: lightgreen;">
+        <button id="scrollBtn" style="display: none;"></button>
+        <script>
+            var lastPos;
+            var up;
+            document.onscroll = function() {
+                    if (window.pageYOffset >= document.documentElement.clientHeight) {
+                        scrollBtn.style.display = "block";
+                        up = true;
+                        scrollBtn.innerHTML = "&#128314;";
+                    } else {
+                        up = false;
+                        scrollBtn.innerHTML = "&#128315;";
+                        if (!lastPos) { scrollBtn.style.display = "none"; }
+                    }
+            }
+            scrollBtn.onclick = function() {
+                if (up) {
+                    lastPos = window.pageYOffset;
+                    window.scrollTo(0, 0);
+                } else {
+                    window.scrollTo(0, lastPos);        
+                }
+            }
+        </script>
+</body>
+
+</html>
