@@ -68,6 +68,10 @@ a {
     text-decoration: none;
 }
 
+#menu li a:hover {
+    color: #ffe600;
+}
+
 .separator {
     width: 5px;
     height: 5px;
@@ -278,6 +282,7 @@ a {
 
 .pre-heading {
     font-size: 17px;
+    color: #131316;
 }
 
 .heading {
@@ -328,6 +333,7 @@ a {
     margin: 19px 0 14px;
     font-size: 20px;
     font-weight: bold;
+
 }
 
 .service-text {
@@ -563,6 +569,10 @@ a {
     float: right; 
     width: 469px; 
     text-align: left;
+}
+
+.pros-heading {
+    color: #515151;
 }
 
 .pros-text {
@@ -883,11 +893,13 @@ a {
     font-size: 21px;
     margin-top: 12px;
     margin-bottom: 15px;
+    color: #131316;
 }
 
 .contact-text {
     font-size: 21px;
     font-weight: 300;
+    color: #515151;
 }
 
 /*Блок формы контактов*/
