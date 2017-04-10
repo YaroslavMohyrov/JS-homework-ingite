@@ -1,0 +1,1369 @@
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    width: 1170px;
+    height: 100%;
+    margin: 0 auto;
+    /*background-color:grey;*/
+    position: relative;
+}
+
+button:focus {
+    outline:none;
+}
+
+ul { 
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 0;
+    padding-left: 0;
+}
+
+.padding-container {
+    padding: 55px 0;
+    box-sizing: border-box;
+}
+
+/*Меню сайта*/
+header {
+    height: 100px;
+    width: 100%;
+    background-color: rgba(19, 19, 22, .3);
+    position: fixed;
+    z-index: 30;
+    /*display: none;*/
+}
+
+#logo {
+    margin-top: 16px;
+    margin-left: -3px;
+}
+
+#menu {
+    float: right;
+    list-style: none;
+    margin-right: -3px;
+    margin-top: 35px;
+}
+
+#menu li {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.separator {
+    width: 5px;
+    height: 5px;
+    background-color: #ffe600 !important;
+    margin-bottom: 4px;
+    cursor: default !important;
+}
+
+#burger {
+    display: none;
+    height: 50px;
+    width: 50px;
+    float: right;
+    box-sizing: border-box;
+    padding: 18px 15px;
+    cursor: pointer;
+}
+
+#burger:focus {
+    outline: none;
+}
+
+#burger:hover {
+    background-color: rgba(19, 19, 22, .3);
+}
+
+#burger:hover .burger-line {
+    background-color: #ffe600;
+}
+
+#burger-menu {
+    list-style: none;
+    z-index: 9999;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    width: 130px;
+    height: 265px;
+    border: 1px solid white;
+    background-color: rgba(19, 19, 22, .3);
+    
+}
+
+.active-burger {
+    background-color: rgba(19, 19, 22, .3);
+}
+
+.active-burger .burger-line {
+    background-color: #ffe600;
+}
+
+#burger-menu li {
+    height: 16.666%;
+    line-height: 45px;
+    color: white;
+    text-align: center;
+}
+
+#burger-menu li:hover {
+    color: #ffe600;
+    background-color: rgba(19, 19, 22, .3);
+}
+
+.burger-line {
+    height: 2px;
+    background-color: white;
+    margin-bottom: 4px;
+    border-radius: 2px;
+}
+
+/*Слайдер изображений*/
+#picture-slider {
+    width: 100%;
+    height: 100vh;
+    min-height: 475px;
+    padding-top: 100px;
+    box-sizing: border-box;
+    /*display: none;*/
+    position: relative;
+}
+
+#slider-bg {
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    list-style: none;
+    overflow: hidden;
+}
+
+#slider-bg li:nth-child(1) {
+    background: url('./img/slide1.png') no-repeat center bottom;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+}
+
+#slider-bg li:nth-child(2) {
+    background: url('./img/slide2.jpg') no-repeat center bottom;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 100%;
+
+}
+
+#slider-bg li:nth-child(3) {
+    background: url('./img/slide3.jpg') no-repeat center bottom;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: -100%;
+}
+
+#align-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#slider-panel {
+    /*height: 370px;*/
+    width: 100%;
+    background-color: rgba(19, 19, 22, .3);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slider-arrow {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    
+    position: absolute;
+    top: 194px;
+}
+
+#prev-arr {
+    left: 61px;
+}
+
+#forward-arr {
+    right: 61px;
+}
+
+#slider-content {
+    width: 770px;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 54px;
+}
+
+#slider-text {
+    font-weight: bold;
+    font-size: 65px;
+    color: white;
+    line-height: 78px;
+    list-style: none;
+    position: relative;
+    overflow: hidden;
+    height: 156px;
+}
+
+#slider-text li {
+    position: absolute;
+    left: -100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#slider-text li:nth-child(1) {
+    left: 0;
+}
+
+
+#slider-button {
+    width: 230px;
+    height: 57px;
+    background-color: #ffe600;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 39px;
+    margin-bottom: 64px;
+    cursor: pointer;
+}
+
+#slider-button:hover {
+    color: #ffe600;
+    background-color: white;
+}
+
+/*Блок с описанием сервисов*/
+#services {
+    width: 100%;
+    /*height: 590px;*/
+    text-align: center;
+    /*display: none;*/
+}
+
+.pre-heading {
+    font-size: 17px;
+}
+
+.heading {
+    margin: 9px 0 16px 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.separator-line {
+    height: 2px;
+    width: 170px;
+    background-color: #ffe600;
+    margin: 0 auto;
+}
+
+.paragraph {
+    margin: 19px auto 50px auto;
+    font-weight: 300;
+    width: 970px;
+    color: #707070;
+}
+
+#service-list {
+    list-style: none;
+    overflow: hidden; /*для учета высоты float-элемента*/
+}
+
+#service-list li {
+    float: left;
+    width: 270px;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+#service-list img {
+    width: 106px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#service-list li:nth-child(4) {
+    margin-right: 0;
+}
+
+.service-title {
+    margin: 19px 0 14px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.service-text {
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+
+/*Блок с описанием этапов работы (HOW WE DO)*/
+#how-we-do {
+    width: 100%;
+    /*height: 470px;*/
+    background-color: #131a1d;
+    color: white;
+    text-align: center;
+    /*display: none;*/
+}
+
+#progress-list {
+    list-style: none;
+    overflow: hidden; /*для учета высоты float-элемента*/
+}
+
+#progress-list li {
+    float: left;
+    width: 170px;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+#progress-list li:nth-child(6) {
+    margin-right: 0;
+}
+
+/*Блок портфолио*/
+#portfolio {
+    width: 100%;
+    text-align: center;
+    /*display: none;*/
+}
+
+#filter {
+    list-style: none;
+    margin: 0 auto 15px;
+}
+
+#filter button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 16px;
+    color: #515151;
+}
+
+#filter li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#filter button:focus {
+    outline: 0;
+}
+
+#picture-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.pic-wrapper {
+    width: 16.666%;
+    float: left;
+    position: relative;
+    display: none;
+}
+
+#picture-container img {
+    width: 100%;
+    height: auto;
+    vertical-align: text-bottom;
+}
+
+.hovered-img {
+    position: absolute;
+    height: 100%;
+    top:0;
+    width: 100%;
+    background-color: rgba(255, 230, 0, .41);
+    text-align: center;
+    color: white;
+    display: none;
+}
+
+.pic-wrapper:hover .hovered-img {
+    display: block;
+} 
+
+.hovered-title {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 6px;
+}
+
+.hovered-content {
+    position: absolute;
+    height: 81px;
+    top: 50%;
+    width: 100%;
+    margin-top: -33px;
+}
+
+.hovered-content div {
+    cursor: default;
+}
+
+.square-btn {
+    width: 60px;
+    height: 60px;
+    background-color: #ffe600;
+    border: none;
+    cursor: pointer;
+}
+
+.square-btn img {
+    -webkit-filter: brightness(300);
+    filter: brightness(300);
+    margin-top: 10px;
+}
+
+.square-btn:hover {
+    background-color: #131316;
+}
+
+.square-btn:hover img {
+    -webkit-filter: none;
+    filter: none;
+}
+
+#contact-button {
+    width: 171px;
+    height: 58px;
+    background-color: #ffe600;
+    color: white;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 18px;
+    cursor: pointer;
+}
+
+#contact-button:hover {
+    background-color: #131316;
+    color: #ffe600;
+}
+
+
+/*Блок со статистикой достижений*/
+#counters-block {
+    background-color: #131a1d;
+    /*height: 400px;*/
+    text-align: center;
+    color: white;
+    /*display: none;*/
+}
+
+#counters-list {
+    list-style: none;
+    overflow: hidden;
+}
+
+#counters-list li {
+    float: left;
+    width: 268px;
+    height: 140px;
+    margin-right: 30px;
+    border: 1px solid #ffe600;
+    margin-bottom: 16px;
+}
+
+#counters-list li:nth-child(4) {
+    margin-right: 0;
+}
+
+.count {
+    font-size: 42px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 2px;
+}
+
+/*About us*/
+#about-us {
+    text-align: center;
+    /*display: none;*/
+}
+
+#pros {
+    list-style: none;
+    display: table;
+    margin-bottom: 61px;
+}
+
+.pros-icon-wrapper {
+    margin-right: 30px;
+    margin-top: 4px;
+    float: left;
+    position: relative;
+    width: 71px;
+    height: 71px;
+}
+
+#pros img {
+    width: 71px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+#pros li {
+    float: left;
+    width: 570px;
+    margin-right: 30px;
+    margin-bottom: 57px;
+}
+
+#pros li:nth-child(even) {
+    margin-right: 0;
+}
+
+.pros-content {
+    float: right; 
+    width: 469px; 
+    text-align: left;
+}
+
+.pros-text {
+    font-weight: 300;
+    margin-top: 7px; 
+}
+
+/*Team*/
+#team-list {
+    list-style: none;
+    overflow: hidden;
+    /*display: none;*/
+}
+
+#team-list li {
+    width: 270px;
+    float: left;
+    margin-right: 30px;
+}
+
+#team-list li:nth-last-child(1) {
+    margin-right: 0;
+}
+
+#team-list img {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+#team-slider {
+    list-style: none;
+    display: none;
+    position: relative;
+    height: 332px;
+}
+
+#team-slider li {
+    width: 270px;
+    position: absolute;
+    opacity: 0;
+    left: 50%;
+    margin-left: -135px;
+}
+
+.arrow-black img {
+    -webkit-filter: brightness(0);
+    filter: brightness(0);
+}
+
+#team-prev-arr {
+    left: 61px;
+}
+
+#team-forward-arr {
+    right: 61px;
+}
+
+.name {
+    color: #ffe600;
+    font-size: 21px;
+}
+
+.employment {
+    margin-top: 3px; 
+    margin-bottom: 12px;
+}
+
+.shadow {
+    height: 2px;
+    background-color: #dfe4e5;
+}
+
+
+
+/*Team details*/
+#details-arrow-block {
+    height: 18px;
+    /*display: none;*/
+}
+
+#details-arrow {
+    position: absolute;
+    width: 0;
+    border-right: 25px solid transparent;
+    border-left: 25px solid transparent;
+    border-bottom: 18px solid #131316;
+    left: 110px;
+
+}
+
+#team-details {
+    text-align: left;
+    background-color: #131316;
+    color: white;
+    /*height: 305px;*/
+    /*display: none;*/
+}
+
+#details-container {
+    width: 770px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 59px;
+    padding-bottom: 42px;
+}
+
+.social-icon {
+    width: 37px;
+    height: 37px;
+    border: 1px solid white;
+    display: inline-block;
+    padding: 7px 0 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#details-container a {
+    display: inline-block;
+    margin-top: 22px;
+    margin-left: -1px;
+    margin-right: 22px;
+}
+
+#close {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    position: absolute;
+    top: 68px;
+    right: 2px;
+}
+
+/*Блок навыков*/
+#team-skills {
+    color: white;
+    background-color: #131a1d;
+    text-align: center;
+    /*display: none;*/
+}
+
+#skills-diagramms {
+    list-style: none;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+#skills-diagramms li {
+    width: 270px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 21px;
+}
+
+#skills-diagramms li:nth-child(4) {
+    margin-right: 0;
+}
+
+.circle {
+    width: 142px;
+    height: 142px;
+    border: 5px solid white;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin: 0 auto 19px;
+}
+
+.progress {
+    width: 142px;
+    height: 142px;
+    margin-top: -5px;
+    margin-left: -5px;
+    transform: rotate(180deg);
+}
+
+.progress-inner-text {
+    font-size: 35px;
+    font-weight: 300;
+    transform: translate(-50%, -50%) rotate(180deg) !important;
+}
+
+/*Блок клиентов*/
+#our-clients {
+    text-align: center;
+    /*display: none;*/
+}
+
+#clients-wrapper {
+    position: relative;
+    margin-bottom: 53px;
+    height: 57px;
+    overflow: hidden;
+}
+
+.clients-list {
+    list-style: none;
+    overflow: hidden;
+    position: absolute;
+    width: 1000px;
+    transition: left 1s;
+}
+
+.clients-list li {
+    width: 170px;
+    float: left;
+    margin-right: 30px;
+    box-sizing: border-box;
+}
+
+.clients-list li:nth-child(6) {
+    margin-right: 0;
+}
+
+#pseudo-btn-container {
+    width: 92px; 
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.pseudo-btn {
+    width: 31px;
+    height: 31px;
+    background-color: #ffe600;
+}
+
+.pseudo-btn img {
+    height: 10px;
+    width: auto;
+    margin-top: 11px;
+}
+
+/*Блок цитат*/
+#quotes {
+    background-color: #131a1d;
+    color: white;
+    text-align: center;
+    /*display: none;*/
+}
+
+#quote-text {
+    width: 570px;
+    margin: 0 auto 23px;;
+    font-size: 20px;
+    line-height: 25px;
+    list-style: none;
+    position: relative;
+    overflow: hidden;
+    height: 75px;
+}
+
+#quote-text li {
+    position: absolute;
+    left: -100%;
+    width: 100%;
+}
+
+
+#quote-author {
+    width: 570px;
+    margin: 18px auto 21px;
+    list-style: none;
+    position: relative;
+    overflow: hidden;
+    height: 24px;
+}
+
+#quote-author li {
+    position: absolute;
+    width: 100%;
+    left: -100%;
+}
+
+#quote-navigation {
+    list-style: none;
+    overflow: hidden;
+    width: 42px;
+    margin: 0 auto;
+}
+
+#quote-navigation li {
+    float: left;
+    margin-right: 7px;
+}
+
+#quote-navigation li:nth-last-child(1) {
+    margin-right: 0;
+}
+
+.nav-square {
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+/*Блок контактов*/
+#contact-us {
+    text-align: center;
+}
+
+#contacts {
+    list-style: none;
+    overflow: hidden;
+}
+
+#contacts li {
+    width: 370px;
+    float: left;
+    margin-right: 30px;
+}
+
+#contacts li:nth-last-child(1) {
+    margin-right: 0;
+}
+
+.contact-title {
+    font-size: 21px;
+    margin-top: 12px;
+    margin-bottom: 15px;
+}
+
+.contact-text {
+    font-size: 21px;
+    font-weight: 300;
+}
+
+/*Блок формы контактов*/
+#contact-form {
+    background-color: #131a1d;
+    color: white;
+    text-align: center;
+}
+
+.error-msg {
+    border: 1px solid red;
+    border-top: none;
+    background-color: #131a1d;
+    color: red;
+    width: 100%;
+    height: 59px;
+    /*padding: 0 19px;*/
+    box-sizing: border-box;
+    position: relative;
+}
+
+.error-msg div {
+    position: absolute;
+    top: 48%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.input-wrapper {
+    font-size: 15px;
+    font-weight: 300;
+    margin-right: 30px;
+    width: 370px;
+    float: left;
+}
+
+.text-field {
+    background-color: #131a1d;
+    height: 59px;
+    width: 100%;
+    color: white;
+    border: 1px solid white;
+    display: block;
+    padding: 0 19px;
+    box-sizing: border-box;
+}
+
+.text-field::-webkit-input-placeholder {
+    color: white;
+}
+
+.text-field::-moz-placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.text-field:focus {
+    outline: none;
+}
+
+#message-box {
+    margin-top: 28px;
+    margin-bottom: 29px;
+    resize: none;
+    background-color: #131a1d;
+    display: block;
+    width: 100%;
+    height: 221px;
+    border: 1px solid white;
+    box-sizing: border-box;
+    padding: 16px 18px;
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+#message-box::-webkit-input-placeholder {
+    color: white;
+}
+
+#message-box::-moz-placeholder {
+    color: white;
+    opacity: 1;
+}
+
+#message-box:focus {
+    outline: none;
+}
+
+#submit {
+    background-color: #ffe600;
+    width: 204px;
+    height: 58px;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: white;
+    color: #ffe600;
+}
+
+
+/*Футер*/
+footer {
+    background-color: #131316;
+    /*height: 178px;*/
+    text-align: center;
+    color: white;
+    padding-top: 21px;
+    box-sizing: border-box;
+    border-bottom: 1px solid white;
+}
+
+#footer-text {
+    font-weight: 300;
+    margin-bottom: 21px;
+}
+
+#social-icons {
+    list-style: none;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 23px;
+}
+
+#social-icons li {
+    float: left;
+    margin-right: 18px;
+}
+
+/*Перекрасить svg в желтый при наведении*/
+a:hover path {
+    fill:#ffe600;
+}
+
+
+#social-icons li:nth-last-child(1) {
+    margin-right: 0;
+}
+
+.back-on-top:hover {
+    background-color: white;
+}
+
+.back-on-top {
+    margin-bottom: 0 !important;
+}
+
+/*Адаптивность*/
+@media (max-width: 1199px) {
+    .container {
+        width: 770px;
+    }
+
+    #slider-content {
+        width: 570px;
+    }
+
+    #slider-text {
+        font-size: 49px;
+        line-height: 59px;
+        height: 118px;
+    }
+
+    .slider-arrow {
+        top: 52%;
+    }
+
+    .paragraph {
+        width: 710px;
+    }
+
+    #service-list {
+        width: 570px;
+        margin: 0 auto;
+    }
+
+    #service-list li:nth-child(2) {
+        margin-right: 0;
+    }
+
+    #progress-list {
+        width: 570px;
+        margin: 0 auto;
+    }
+
+    #progress-list li:nth-child(3) {
+        margin-right: 0;
+    }
+
+    #filter li {
+        display: inline-block;
+        margin: 0 7px;
+    }
+
+    .pic-wrapper {
+        width: 25%;
+    }
+
+    #counters-list {
+        width: 570px;
+        margin: 0 auto;
+    }
+
+    #counters-list li:nth-child(2) {
+    margin-right: 0;
+    }
+
+    #pros {
+        width: 570px;
+        margin: 0 auto 61px;
+    }
+
+    #team-list li {
+        width: 170px;
+    }
+
+    #team-list img {
+        width: 100%;
+    }
+
+    #details-arrow {
+        left: 60px;
+    }
+
+    #details-container {
+        width: 570px;
+    }
+
+    #skills-diagramms {
+        width: 570px;
+        margin: 0 auto;
+    }
+
+    #skills-diagramms li:nth-child(2) {
+        margin-right: 0;
+    }
+
+    #clients-wrapper {
+        width: 570px;
+        margin: 0 auto;
+    }
+
+    #contacts li {
+        width: 236.666px;
+    }
+
+    .input-wrapper {
+        width: 236.666px;
+    }
+}
+
+@media (max-width: 799px) {
+    .container {
+        width: 570px;
+    }
+
+    header {
+        height: 50px;
+    }
+
+    #logo {
+        height: 30px;
+        width: auto;
+        margin-top: 8px;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    #burger {
+        display: block;
+    }
+
+    #picture-slider {
+        padding-top: 50px;
+    }
+
+    #prev-arr {
+        left: 18px;
+    }
+
+    #forward-arr {
+        right: 18px;
+    }
+
+    #slider-content {
+        width: 370px;
+    }
+
+    #slider-text {
+        height: 177px;
+    }
+
+    .paragraph {
+        width: 570px;
+    }
+
+    .pic-wrapper {
+        width: 33.333%;
+    }
+
+    #filter button {
+        font-size: 14px;
+    } 
+
+    #pros, #pros li {
+        width: 370px;
+    }
+
+    .pros-content {
+        width: 269px;
+    }
+
+    #team-list {
+        display: none;
+    }
+
+    #team-slider {
+        display: block;
+    }
+
+    #details-arrow {
+        left: 50%;
+        margin-left: -25px;
+    }
+
+    #details-container {
+        width: 510px;
+    }
+
+    #contacts li {
+        width: 100%;
+        margin-bottom: 42px;
+    }
+
+    #contacts li:nth-last-child(1) {
+        margin-bottom: 0;
+    }
+
+    .input-wrapper {
+        width: 100%;
+        margin-bottom: 28px;
+    }
+
+    #message-box {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 619px) {
+    .container {
+        width: 270px;
+    }
+
+    #forward-arr {
+        right: 0;
+    }
+
+    #prev-arr {
+        left: 0;
+    }
+
+    #slider-content {
+        width: 170px;
+    }
+
+    #slider-text {
+        font-size: 32px;
+        line-height: 39px;
+        height: 156px;
+    }
+
+    #slider-button {
+        width: 170px;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    .heading {
+        width: 210px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .paragraph {
+        width: 210px;
+    }
+
+    #service-list, #service-list li {
+        width: 210px;
+    }
+
+    #progress-list {
+        width: 170px;
+    }
+
+    #progress-list li {
+        margin-bottom: 19px;
+    }
+
+    .pic-wrapper {
+        width: 50%;
+    }
+
+    #filter li {
+        margin: 0 5px;
+    }
+
+    #filter li:nth-child(6) {
+        display: none;
+    }
+
+    #counters-list {
+        width: 100%;
+    }
+
+    #pros, #pros li {
+        width: 270px;
+    }
+
+    .pros-content {
+        width: 169px;
+    }
+
+    #team-slider {
+        height: 234px;
+    }
+
+    #team-slider li {
+        width: 170px;
+        margin-left: -85px;
+    }
+
+    #team-slider li img {
+        width: 170px;
+        height: auto;
+    }
+
+    #team-prev-arr {
+        left: 0;
+    }
+
+    #team-forward-arr {
+        right: 0;
+    }
+
+    #details-container {
+        width: 270px;
+    }
+
+    #skills-diagramms {
+        width: 270px;
+    }
+
+    #clients-wrapper {
+        width: 170px;
+    }
+
+    #quote-text {
+        width: 270px;
+    }
+
+    #quote-author {
+        width: 270px;
+    }
+}
+
+@media (max-width: 379px) {
+    .pic-wrapper {
+        width: 100%;
+    }
+}
+
+

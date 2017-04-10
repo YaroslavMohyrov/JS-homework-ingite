@@ -1,0 +1,615 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="./scripts/progressbar.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script defer src="./scripts/picslider.js"></script>
+    <script defer src="./scripts/enlargeicons.js"></script>
+    <script defer src="./scripts/imgfilter.js"></script>
+    <script defer src="./scripts/team.js"></script>
+    <script defer src="./scripts/counters.js"></script> 
+    <script defer src="./scripts/teamslider.js"></script>
+    <script defer src="./scripts/quoteslider.js"></script>
+    <script defer src="./scripts/validation.js"></script>
+    <script defer src="./scripts/clientsslider.js"></script>
+    <script defer src="./scripts/scroll.js"></script>
+    <script defer src="./scripts/burger.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <img id="logo" src="./img/logo.png">
+            <ul id="menu">
+                <li><a href="#home">HOME</a></li>
+                <li><div class="separator"></div></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><div class="separator"></div></li>
+                <li><a href="#work">WORK</a></li>
+                <li><div class="separator"></div></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><div class="separator"></div></li>
+                <li><a href="#clients">CLIENTS</a></li>
+                <li><div class="separator"></div></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <div id="burger">
+                <div class="burger-line" style="top: 10px"></div>
+                <div class="burger-line" style="top: 50%"></div>
+                <div class="burger-line" style="bottom: 10px;"></div>
+            </div>
+        </div>
+        <ul id="burger-menu" style="display:none;">
+            <a href="#home"><li>HOME</li></a>
+            <a href="#services"><li>SERVICES</li></a>
+            <a href="#work"><li>WORK</li></a>
+            <a href="#about"><li>ABOUT</li></a>
+            <a href="#clients"><li>CLIENTS</li></a>
+            <a href="#contact"><li>CONTACT</li></a>
+        </ul>
+    </header>
+   <main>
+       <a name="home"></a>
+        <div id="picture-slider">
+            <ul id="slider-bg">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div id="align-container">
+                <div id="slider-panel">
+                    <div class="container">
+                        <button id="prev-arr" class="slider-arrow"><img src="./img/backArr.png"></button>
+                        <button id="forward-arr" class="slider-arrow"><img src="./img/forwardArr.png"></button>
+                        <div id="slider-content">
+                            <ul id="slider-text">
+                                <li>BRANDING HAVE ANOTHER DEFINITION</li>
+                                <li>ENGAGING PURPOSEFUL AND CREATIVE</li>
+                                <li>IF YOU CAN IMAGINE IT, WE CAN CREATE IT</li>
+                            </ul>                            
+                            <button id="slider-button">BUY THIS THEME</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a name="services"></a>
+        <div id="services">
+            <div class="container padding-container">
+                <div class="pre-heading">OUR SERVICES</div>
+                <div class="heading">WHAT WE LOVE TO DO</div>
+                <div class="separator-line" style="height: 3px;"></div>  <!--именно этот разделитель был 3px в макете-->
+                <div class="paragraph">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellen tesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt ni dictum porta.</div>
+                <ul id="service-list">
+                    <li>
+                        <div style="position: relative; height: 107px;"><img src="./img/webdesign_icon.png"></div>
+                        <div class="service-title">WEB DESIGN</div>
+                        <div class="service-text">Donec sollicitudin molestie malesuada. Curabitur aliquet quam id dui posuere blandit.</div>
+                    </li>
+                    <li>
+                        <div style="position: relative; height: 107px;"><img src="./img/graphicdesign_icon.png"></div>
+                        <div class="service-title">GRAPHIC DESIGN</div>
+                        <div class="service-text">Donec sollicitudin molestie malesuada. Curabitur aliquet quam id dui posuere blandit.</div>
+                    </li>
+                    <li>
+                        <div style="position: relative; height: 107px;"><img src="./img/photography_icon.png"></div>
+                        <div class="service-title">PHOTOGRAPHY</div>
+                        <div class="service-text">Donec sollicitudin molestie malesuada. Curabitur aliquet quam id dui posuere blandit.</div>
+                    </li>
+                    <li>
+                        <div style="position: relative; height: 107px;"><img src="./img/developing_icon.png"></div>
+                        <div class="service-title">DEVELOPING</div>
+                        <div class="service-text">Donec sollicitudin molestie malesuada. Curabitur aliquet quam id dui posuere blandit.</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="how-we-do">
+            <div class="container padding-container" style="padding-top: 44px; padding-bottom: 63px;">
+                <div class="heading" style="color: #ffe600; margin-bottom: 0;">HOW WE DO IT</div>
+                <div class="paragraph" style="margin-top: 12px;">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat.</div>
+                <ul id="progress-list">
+                    <li>
+                        <img src="./img/analyse_icon.png" style="margin-top: 1px;">
+                        <div class="service-title" style="margin-top: 19px; margin-bottom: 19px;">ANALYSE</div>
+                        <div class="service-text" style="line-height: 20px;">Vivamus suscipit tortor eget felis porttitor volutpat. Cura bitur aliquet quam.</div>
+                    </li>
+                    <li>
+                        <img src="./img/preparing_icon.png" style="margin: 1px 0;">
+                        <div class="service-title" style="margin-top: 19px; margin-bottom: 19px;">PREPARING</div>
+                        <div class="service-text" style="line-height: 20px;">Vivamus suscipit tortor eget felis porttitor volutpat. Cura bitur aliquet quam id dui posu ere blandit</div>
+                    </li>
+                    <li>
+                        <img src="./img/working_icon.png" style="margin: 3px 5px 1px 0;">
+                        <div class="service-title" style="margin-top: 19px; margin-bottom: 19px;">WORKING</div>
+                        <div class="service-text" style="line-height: 20px;">Vivamus suscipit tortor eget felis porttitor volutpat. </div>
+                    </li>
+                    <li>
+                        <img src="./img/finalyse_icon.png">
+                        <div class="service-title" style="margin-top: 19px; margin-bottom: 19px;">FINALYSE</div>
+                        <div class="service-text" style="line-height: 20px;">Vivamus suscipit tortor eget felis porttitor volutpat. Cura bitur aliquet quam id.</div>
+                    </li>
+                    <li>
+                        <img src="./img/testing_icon.png" style="margin-top: 4px;">
+                        <div class="service-title" style="margin-top: 19px; margin-bottom: 19px;">TESTING</div>
+                        <div class="service-text" style="line-height: 20px;">Vivamus suscipit tortor eget felis porttitor volutpat. Cura bitur aliquet quam id dui posu ere blandit</div>
+                    </li>
+                    <li>
+                        <img src="./img/deliver_icon.png" style="margin: 9px 0 1px;">
+                        <div class="service-title" style="margin-top: 19px; margin-bottom: 19px;">DELIVER</div>
+                        <div class="service-text" style="line-height: 20px;">Vivamus suscipit tortor eget felis porttitor volutpat. Cur est bitur.</div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <a name="work"></a>
+        <div id="portfolio">
+            <div class="container padding-container">
+                <div class="pre-heading">OUR WORKS</div>
+                <div class="heading">WHAT WE DONE SO FAR</div>
+                <div class="separator-line"></div>
+                <div class="paragraph" style="line-height: 25px; margin-bottom: 54px;">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellen tesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt ni dictum porta.</div>
+                <ul id="filter">
+                    <li><button>ALL</button></li>
+                    <li><div class="separator"></div></li>
+                    <li><button>WEB DESIGN</button></li>
+                    <li><div class="separator"></div></li>
+                    <li><button>GRAPHIC DESIGN</button></li>
+                    <li><div class="separator"></div></li>
+                    <li><button>PHOTOGRAPHY</button></li>
+                    <li><div class="separator"></div></li>
+                    <li><button>ILLUSTRATION</button></li>
+                </ul>
+            </div>
+            <div id="picture-container">
+                <div class="pic-wrapper">
+                    <img src="./img/picture12.png">
+                    <div class="hovered-img">
+                        <div class="hovered-content">
+                            <div class="hovered-title">SAMPLE IMAGE 1</div>
+                            <div>GRAPHIC DESIGN</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic-wrapper">
+                    <img src="./img/picture3.png">
+                    <div class="hovered-img">
+                        <div class="hovered-content">
+                            <div class="hovered-title">SAMPLE IMAGE 2</div>
+                            <div>PHOTOGRAPHY</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic-wrapper">
+                    <img src="./img/picture4.png">
+                    <div class="hovered-img">
+                        <div class="hovered-content">
+                            <div class="hovered-title">SAMPLE IMAGE 3</div>
+                            <div>WEB DESIGN</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic-wrapper">
+                    <img src="./img/picture2.png">
+                    <div class="hovered-img">
+                        <div class="hovered-content">
+                            <div class="hovered-title">SAMPLE IMAGE 4</div>
+                            <div>ILLUSTRATION</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic-wrapper">
+                    <img src="./img/picture5.png">
+                    <div class="hovered-img">
+                        <div class="hovered-content">
+                            <div class="hovered-title">SAMPLE IMAGE 5</div>
+                            <div>WEB DESIGN</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic-wrapper">
+                    <img src="./img/picture6.png">
+                    <div class="hovered-img">
+                        <div class="hovered-content">
+                            <div class="hovered-title">SAMPLE IMAGE 6</div>
+                            <div>GRAPHIC DESIGN</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic-wrapper">
+                    <img src="./img/picture7.png">
+                    <div class="hovered-img">
+                        <div class="hovered-content">
+                            <div class="hovered-title">SAMPLE IMAGE 7</div>
+                            <div>ILLUSTRATION</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic-wrapper">
+                    <img src="./img/picture1.png">
+                    <div class="hovered-img">
+                        <div class="hovered-content">
+                            <div class="hovered-title">SAMPLE IMAGE 8</div>
+                            <div>PHOTOGRAPHY</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic-wrapper">
+                    <img src="./img/picture8.png">
+                    <div class="hovered-img">
+                        <div class="hovered-content">
+                            <div class="hovered-title">SAMPLE IMAGE 8</div>
+                            <div>WEB DESIGN</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic-wrapper">
+                    <img src="./img/picture9.png">
+                    <div class="hovered-img">
+                        <div class="hovered-content">
+                            <div class="hovered-title">SAMPLE IMAGE 9</div>
+                            <div>GRAPHIC DESIGN</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic-wrapper">
+                    <img src="./img/picture10.png">
+                    <div class="hovered-img">
+                        <div class="hovered-content">
+                            <div class="hovered-title">SAMPLE IMAGE 10</div>
+                            <div>ILLUSTRATION</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic-wrapper">
+                    <img src="./img/picture11.png">
+                    <div class="hovered-img">
+                        <div class="hovered-content">
+                            <div class="hovered-title">SAMPLE IMAGE 11</div>
+                            <div>PHOTOGRAPHY</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container padding-container" style="padding-top: 64px;">
+                <a href="#contact"><button class="square-btn" style="margin-bottom: 44px;"><img src="./img/downArrYellow.png"></button></a>
+                <div class="heading" style="margin-bottom: 14px">DO YOU LIKE OUR PORTFOLIO?</div>
+                <div class="paragraph" style="margin-top: 0">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere.</div>
+                <a href="#contact"><button id="contact-button">CONTACT US</button></a>
+            </div>
+        </div>
+        <div id="counters-block">
+            <div class="container padding-container" style="padding-top: 52px; padding-bottom: 48px;">
+                <div class="heading" style="margin-top:0; margin-bottom: 14px">WE ARE PROUD OF THESE NUMBERS</div>
+                <div class="paragraph" style="margin-top: 0; margin-bottom: 57px;">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere.</div>
+                <ul id="counters-list">
+                    <li><div class="count">0</div><div style="color: #ffe600">HAPPY CLIENTS</div></li>
+                    <li><div class="count">0</div><div style="color: #ffe600">COMPLETED PROJECTS</div></li>
+                    <li><div class="count">0</div><div style="color: #ffe600">AWARDS</div></li>
+                    <li><div class="count">0</div><div style="color: #ffe600">COFFEE DRINKS</div></li>
+                </ul>
+            </div>
+        </div>
+        <a name="about"></a>
+        <div id="about-us">
+            <div class="container padding-container" style="padding-top: 105px; padding-bottom: 45px;">
+                <div class="pre-heading">ABOUT US</div>
+                <div class="heading">WHO WE ARE</div>
+                <div class="separator-line"></div>
+                <div class="paragraph" style="line-height: 25px; margin-bottom: 91px;">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellen tesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt ni dictum porta.</div>
+                <ul id="pros">
+                    <li>
+                        <div class="pros-icon-wrapper"><img src="./img/service1_icon.png"></div>
+                        <div class="pros-content">
+                            <div class="pros-heading">ON TIME PROJECTS</div>
+                            <div class="pros-text">Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt ni dictum porta.Cras ultricies ligula sed magna dictum est ontar des lorem ipsum.</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pros-icon-wrapper"><img src="./img/service2_icon.png"></div>
+                        <div class="pros-content">
+                            <div class="pros-heading">FULLY SUPPORT</div>
+                            <div class="pros-text">Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt ni dictum porta.Cras ultricies ligula sed magna dictum est ontar des lorem ipsum.</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pros-icon-wrapper"><img src="./img/service3_icon.png"></div>
+                        <div class="pros-content">
+                            <div class="pros-heading">PROFESSIONAL EXPERIENCE</div>
+                            <div class="pros-text">Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt ni dictum porta.Cras ultricies ligula sed magna dictum est ontar des lorem ipsum.</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pros-icon-wrapper"><img src="./img/service4_icon.png"></div>
+                        <div class="pros-content">
+                            <div class="pros-heading">COMMUNICATIVE TEAM</div>
+                            <div class="pros-text">Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt ni dictum porta.Cras ultricies ligula sed magna dictum est ontar des lorem ipsum.</div>
+                        </div>
+                    </li>
+
+                </ul>
+                <div class="heading" style="margin-bottom: 14px;">THE TEAM</div>
+                <div class="paragraph" style="margin-top: 0; margin-bottom: 58px;">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere.</div>
+                <ul id="team-list">
+                    <li>
+                        <img src="./img/photos/creative_director.jpg">
+                        <div class="name">JOHN DOE</div>
+                        <div class="employment">CREATIVE DIRECTOR</div>
+                        <div class="shadow"></div>
+                    </li>
+                    <li>
+                        <img src="./img/photos/art_director.jpg">
+                        <div class="name">JOHN WILLIAMS</div>
+                        <div class="employment">ART DIRECTOR</div>
+                        <div class="shadow"></div>
+                    </li>
+                    <li>
+                        <img src="./img/photos/web_developer.jpg">
+                        <div class="name">JOHN JOHNSON</div>
+                        <div class="employment">WEB DEVELOPER</div>
+                        <div class="shadow"></div>
+                    </li>
+                    <li>
+                        <img src="./img/photos/photographer.jpg">
+                        <div class="name">JOHN SMITH</div>
+                        <div class="employment">PHOTOGRAPHER</div>
+                        <div class="shadow"></div>
+                    </li>
+                </ul>
+                <ul id="team-slider">
+                    <button id="team-prev-arr" class="slider-arrow arrow-black"><img src="./img/backArr.png"></button>
+                    <button id="team-forward-arr" class="slider-arrow arrow-black"><img src="./img/forwardArr.png"></button>
+                    <li style="opacity: 1;">
+                        <img src="./img/photos/creative_director.jpg">
+                        <div class="name">JOHN DOE</div>
+                        <div class="employment">CREATIVE DIRECTOR</div>
+                        <div class="shadow"></div>
+                    </li>
+                    <li>
+                        <img src="./img/photos/art_director.jpg">
+                        <div class="name">JOHN WILLIAMS</div>
+                        <div class="employment">ART DIRECTOR</div>
+                        <div class="shadow"></div>
+                    </li>
+                    <li>
+                        <img src="./img/photos/web_developer.jpg">
+                        <div class="name">JOHN JOHNSON</div>
+                        <div class="employment">WEB DEVELOPER</div>
+                        <div class="shadow"></div>
+                    </li>
+                    <li>
+                        <img src="./img/photos/photographer.jpg">
+                        <div class="name">JOHN SMITH</div>
+                        <div class="employment">PHOTOGRAPHER</div>
+                        <div class="shadow"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="details-arrow-block">
+            <div class="container">
+                <div id="details-arrow"></div>
+            </div>
+        </div>
+        <div id="team-details">
+            <div id="details-container">
+                <div class="name">JOHN DOE</div>
+                <div class="pros-text" style="margin-top: 14px; line-height: 25px;">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt ni dictum porta.</div>
+                <div class="pros-text" style="margin-top: 14px; line-height: 25px; display:none;">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est.</div>
+                <div class="pros-text" style="margin-top: 14px; line-height: 25px; display:none;">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae.</div>
+                <div class="pros-text" style="margin-top: 14px; line-height: 25px; display:none;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                <a href="#"><div class="social-icon"><img src="./img/fb_icon.png"></div></a>
+                <a href="#"><div class="social-icon"><img src="./img/twitter_icon.png"></div></a>
+                <button id="close"><img src="./img/close.png"></button>
+            </div>
+        </div>
+        <div id="team-skills">
+            <div class="container padding-container" style="padding-top: 43px; padding-bottom: 34px;">
+                <div class="heading" style="margin-bottom: 13px">SKILLS</div>
+                <div class="paragraph" style="margin-top: 0; margin-bottom: 57px;">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere.</div>
+                <ul id="skills-diagramms">
+                    <li>
+                        <div class="circle">
+                        <div id="htmlcss_progress" class="progress"></div>
+                        </div>
+                        <div class="name">HTML&#38;CSS</div>
+                    </li>
+                    <li>
+                        <div class="circle">
+                        <div id="aips_progress" class="progress"></div>
+                        </div>
+                        <div class="name">AI &#38; PS</div>
+                    </li>
+                    <li>
+                        <div class="circle">
+                        <div id="jsphp_progress" class="progress"></div>
+                        </div>
+                        <div class="name">JS &#38; PHP</div>
+                    </li>
+                    <li>
+                        <div class="circle">
+                        <div id="photo_progress" class="progress"></div>
+                        </div>
+                        <div class="name">PHOTOGRAPHY</div>
+                    </li>       
+                </ul>
+            </div>
+        </div>
+        <a name="clients"></a>
+        <div id="our-clients">
+            <div class="container padding-container" style="padding-top: 58px; padding-bottom: 62px;">
+                <div class="pre-heading">OUR CLIENTS</div>
+                <div class="heading" style="margin-bottom: 15px;">WHO LOVE TO WORK WITH US</div>
+                <div class="separator-line"></div>
+                <div class="paragraph" style="margin-top: 21px; margin-bottom: 96px">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellen tesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt ni dictum porta.</div>
+                <div id="clients-wrapper">
+                    <ul class="clients-list" style="left: -1000px;">
+                        <li><img src="./img/logo1.png"></li>
+                        <li><img src="./img/logo2.png"></li>
+                        <li><img src="./img/logo3.png"></li>
+                        <li><img src="./img/logo4.png"></li>
+                        <li><img src="./img/logo5.png"></li>
+                    </ul>
+                    <ul class="clients-list" style="left: 0;">
+                        <li><img src="./img/logo1.png"></li>
+                        <li><img src="./img/logo2.png"></li>
+                        <li><img src="./img/logo3.png"></li>
+                        <li><img src="./img/logo4.png"></li>
+                        <li><img src="./img/logo5.png"></li>
+                    </ul>
+                    <ul class="clients-list" style="left: 1000px;">
+                        <li><img src="./img/logo1.png"></li>
+                        <li><img src="./img/logo2.png"></li>
+                        <li><img src="./img/logo3.png"></li>
+                        <li><img src="./img/logo4.png"></li>
+                        <li><img src="./img/logo5.png"></li>
+                    </ul>
+                </div>
+                <div id="pseudo-btn-container">
+                    <div class="pseudo-btn" style="float: left"><img src="./img/backArr.png"></div>
+                    <div class="pseudo-btn" style="float: right"><img src="./img/forwardArr.png"></div>
+                </div>
+            </div>
+        </div>
+        <div id="quotes">
+            <div class="container padding-container" style="padding-top: 63px; padding-bottom: 65px;">
+                <ul id="quote-text">
+                    <li style="left: 0">“An image is not simply a trademark, a design, a slogan or an easily remembered picture. It is a studiously crafted personality profile of an individual, institution,corporation, product or service”</li>
+                    <li>“It is not enough that we build products that function, that are understandable and usable, we also need to build products that bring joy and excitement, pleasure and fun, and, yes, beauty to people’s lives”</li>
+                    <li>“Creativity is to discover a question that has never been asked. If one brings up an idiosyncratic question, the answer he gives will necessarily be unique as well”</li>
+                    <li>“Artists can have greater access to reality; they can see patterns and details and connections that other people, distracted by the blur of life, might miss. Just sharing that truth can be a very powerful thing”</li>
+                </ul>
+                <div class="separator-line"></div>
+                <ul id="quote-author">
+                    <li style="left:0;">Daniel J. Boorstin</li>
+                    <li>Don Norman</li>
+                    <li>Kenya Hara</li>
+                    <li>Jay-Z</li>
+                </ul>
+                <ul id="quote-navigation">
+                    <li><div class="nav-square separator"></div></li>
+                    <li><div class="nav-square"></div></li>
+                    <li><div class="nav-square"></div></li>
+                    <li><div class="nav-square"></div></li>
+                </ul>
+            </div>
+        </div>
+        <a name="contact"></a>
+        <div id="contact-us">
+            <div class="container padding-container" style="padding-top: 56px; padding-bottom: 57px;">
+                <div class="pre-heading">CONTACT US</div>
+                <div class="heading">WHERE YOU CAN FIND US</div>
+                <div class="separator-line"></div>
+                <div class="paragraph" style="margin-top: 21px; margin-bottom: 68px;">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pelle ntesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt ni dictum porta.</div>
+                <ul id="contacts">
+                    <li>
+                        <img src="./img/adress_icon.svg">
+                        <div class="contact-title">OUR ADDRESS</div>
+                        <div class="contact-text">214 Awesome Street,NY</div>
+                    </li>
+                    <li>
+                        <img src="./img/email_icon.svg">
+                        <div class="contact-title">OUR MAIL</div>
+                        <div class="contact-text">awesomemail@ourmail.com</div>
+                    </li>
+                    <li>
+                        <img src="./img/phone_icon.svg">
+                        <div class="contact-title">OUR PHONE</div>
+                        <div class="contact-text">(0) 123-456-789-00</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="contact-form">
+            <div class="container padding-container" style="padding-top: 45px; padding-bottom: 68px">
+                <div class="heading" style="margin-bottom: 0;">SEND US A MESSAGE</div>
+                <div class="paragraph" style="margin-top: 13px; margin-bottom: 59px;">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere.</div>
+                <div style="overflow: hidden">
+                    <div class="input-wrapper">
+                        <input type="text" id="name-field" class="text-field" placeholder="Your Name">
+                        <div id="name-error" class="error-msg" style="display:none;"><div>Only latin alphabet letters allowed!</div></div>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="mail-field" class="text-field" placeholder="Your Mail">
+                        <div id="mail-error" class="error-msg" style="display:none;"><div>Please enter a valid e-mail address!</div></div>
+                    </div>
+                    <div class="input-wrapper" style="margin-right: 0;">
+                        <input type="text" id="subject" class="text-field" placeholder="Subject">
+                        <div id="subj-error" class="error-msg" style="display:none;"><div>Only latin alphabet letters and numbers allowed!</div></div>
+                    </div>
+                </div>
+                <textarea id="message-box" placeholder="Enter Message Here..."></textarea>
+                <button id="submit">SEND MESSAGE</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="footer-text">&#169; Copyright 2013 <span style="color:#ffe600">Smak</span>. All Rights Reserved.</div>
+        <ul id="social-icons">
+            <li><a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="18" viewBox="0 0 9 18">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: #fff;
+                             fill-rule: evenodd;
+                            }
+                        </style>
+                    </defs>
+                    <path d="M5.009,18.008 L2.000,18.008 L2.031,9.968 L0.012,10.000 L0.044,6.957 L1.969,6.955 L1.997,5.354 C1.997,3.049 3.340,0.959 6.054,0.959 L8.033,0.928 L8.002,4.035 L6.433,4.003 C5.376,4.003 4.950,4.898 4.950,5.635 L5.040,6.986 L7.987,7.018 L7.999,9.999 L5.042,10.000 L5.009,18.008 Z" class="cls-1"/>
+            </svg>
+            </a></li>
+            <li><a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="17" height="17" viewBox="0 0 17 17">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: #fff;
+                                fill-rule: evenodd;
+                            }
+                        </style>
+                    </defs>
+                    <path d="M8.500,16.733 C3.878,16.733 0.116,12.973 0.116,8.349 C0.116,3.727 3.878,-0.034 8.500,-0.034 C13.124,-0.034 16.884,3.727 16.884,8.349 C16.884,12.973 13.124,16.733 8.500,16.733 M15.572,9.497 C15.325,9.420 13.355,8.832 11.112,9.191 C12.048,11.764 12.429,13.862 12.501,14.297 C14.108,13.210 15.253,11.490 15.572,9.497 M11.298,14.951 C11.191,14.323 10.775,12.134 9.769,9.521 C9.753,9.527 9.737,9.531 9.722,9.537 C5.684,10.945 4.234,13.746 4.106,14.009 C5.318,14.955 6.846,15.519 8.500,15.519 C9.492,15.521 10.438,15.318 11.298,14.951 M3.181,13.149 C3.343,12.871 5.308,9.617 9.002,8.423 C9.095,8.392 9.189,8.364 9.284,8.337 C9.103,7.931 8.909,7.523 8.704,7.122 C5.127,8.192 1.657,8.148 1.344,8.142 C1.342,8.215 1.340,8.287 1.340,8.361 C1.340,10.200 2.037,11.878 3.181,13.149 M1.490,6.893 C1.811,6.898 4.762,6.911 8.111,6.021 C6.926,3.912 5.645,2.138 5.456,1.879 C3.452,2.824 1.955,4.671 1.490,6.893 M6.822,1.399 C7.019,1.664 8.321,3.435 9.494,5.590 C12.040,4.637 13.118,3.187 13.246,3.003 C11.983,1.881 10.319,1.198 8.500,1.198 C7.922,1.198 7.361,1.271 6.822,1.399 M14.042,3.831 C13.892,4.037 12.692,5.575 10.045,6.656 C10.210,6.996 10.372,7.343 10.522,7.693 C10.574,7.816 10.625,7.940 10.674,8.062 C13.057,7.762 15.424,8.243 15.659,8.292 C15.646,6.604 15.043,5.050 14.042,3.831 " class="cls-1"/>
+                </svg>                
+            </a></li>
+            <li><a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="20" height="16" viewBox="0 0 20 16">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                            fill: #fff;
+                            fill-rule: evenodd;
+                        }
+                        </style>
+                    </defs>
+                    <path d="M19.535,2.215 C18.828,2.529 18.065,2.742 17.267,2.837 C18.082,2.347 18.707,1.574 19.003,0.653 C18.240,1.105 17.397,1.435 16.497,1.611 C15.776,0.844 14.751,0.365 13.616,0.365 C11.435,0.365 9.669,2.132 9.669,4.312 C9.669,4.622 9.704,4.923 9.770,5.211 C6.489,5.047 3.580,3.475 1.635,1.087 C1.294,1.670 1.100,2.347 1.100,3.072 C1.100,4.441 1.797,5.651 2.856,6.358 C2.210,6.337 1.602,6.160 1.069,5.865 C1.068,5.880 1.068,5.898 1.068,5.913 C1.068,7.827 2.428,9.421 4.234,9.785 C3.902,9.875 3.553,9.922 3.193,9.922 C2.939,9.922 2.692,9.898 2.451,9.852 C2.954,11.420 4.411,12.561 6.138,12.594 C4.787,13.652 3.085,14.283 1.236,14.283 C0.916,14.283 0.602,14.264 0.295,14.228 C2.042,15.347 4.116,16.001 6.344,16.001 C13.606,16.001 17.576,9.986 17.576,4.770 C17.576,4.598 17.573,4.428 17.565,4.258 C18.337,3.702 19.005,3.006 19.535,2.215 " class="cls-1"/>
+                </svg>    
+            </a></li>
+            <li><a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="21" height="17" viewBox="0 0 21 17">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: #fff;
+                                fill-rule: evenodd;
+                            }
+                        </style>
+                    </defs>
+                    <path d="M11.015,-0.030 L5.977,-0.030 C3.704,-0.030 1.564,1.854 1.564,3.787 C1.564,5.761 3.114,7.354 5.427,7.354 C5.588,7.354 5.745,7.351 5.897,7.340 C5.747,7.619 5.639,7.932 5.639,8.257 C5.639,8.807 5.944,9.251 6.330,9.613 C6.037,9.613 5.756,9.622 5.451,9.622 C2.636,9.622 -0.000,11.328 -0.000,13.128 C-0.000,14.901 2.844,16.042 5.659,16.042 C8.870,16.042 10.953,14.279 10.953,12.505 C10.953,11.084 10.208,10.232 8.868,9.314 C8.409,9.000 7.534,8.235 7.534,7.788 C7.534,7.261 7.689,7.002 8.507,6.382 C9.346,5.748 9.938,4.857 9.938,3.820 C9.938,2.583 9.371,1.380 8.304,0.983 L10.975,1.014 L11.015,-0.030 ZM9.275,12.263 C9.065,12.395 9.056,12.689 9.056,12.863 C9.056,14.295 7.998,15.008 5.680,15.008 C3.734,15.008 2.017,14.064 2.017,12.632 C2.017,11.227 4.040,10.058 5.987,10.078 C6.441,10.082 6.863,10.154 7.248,10.275 C8.304,10.985 9.063,11.389 9.275,12.200 M6.160,6.854 C4.853,6.817 3.613,5.439 3.386,3.778 C3.162,2.117 4.037,0.845 5.343,0.883 C6.649,0.921 7.891,2.255 8.117,3.915 C8.341,5.577 7.466,6.892 6.160,6.854 M15.993,3.925 L15.993,-0.030 L15.000,-0.030 L15.000,3.988 L10.991,4.019 L11.054,5.004 L15.031,4.973 L15.000,9.022 L15.993,8.991 L15.962,5.004 L20.000,4.973 L20.031,3.925 L15.993,3.925 Z" class="cls-1"/>
+                </svg>
+            </a></li>
+        </ul>
+        <div><a href="#home"><button class="square-btn back-on-top" style="margin-bottom: 44px;"><img src="./img/downArrYellow.png" style="transform: rotate(180deg);"></button></a></div>
+
+    </footer>
+
+</body>
+
+</html>
