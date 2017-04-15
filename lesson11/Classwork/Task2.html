@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html ng-app="task2">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="mainController">
+    <div class="form-inline">
+        <div class="form-group">
+            <input type="text" class="form-control" ng-model="str">
+            <input type="button" class="btn btn-primary" value="Show" ng-click="showStr()">
+        </div>
+    </div>
+    <h1>{{strContent}}</h1>
+    <script>
+        angular.module("task2", [])
+        .controller("mainController", function($scope) {
+            $scope.showStr = function() {
+                $scope.strContent = $scope.str;
+            }
+        })
+
+    </script>
+</body>
+
+</html>

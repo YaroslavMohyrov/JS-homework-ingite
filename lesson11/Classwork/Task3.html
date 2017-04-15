@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html ng-app="task3">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="mainController">
+    <div class="form-inline">
+        <div class="form-group">
+            <input type="text" class="form-control" ng-model="str">
+        </div>
+    </div>
+    <h1>{{str}}</h1>
+    <script>
+        angular.module("task3", [])
+        .controller("mainController", function($scope) {
+        })
+
+    </script>
+</body>
+
+</html>

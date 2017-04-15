@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="task1Hw">
+<head>
+    <title>ToDo List (Task2)</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./bootstrap-theme.css" rel="stylesheet" />
+    <script>
+        var model = { items: [
+            { name: "Купить молоко", description: "Сходить на рынок и купить молоко", date: "2/18/2015", completed: false},
+            { name: "Посмотреть видео урок по AngularJS", description: "Досмотреть до конца урок на itvdn.com", date: "2/18/2015", completed: false}
+        ] }
+
+        var task1Hw = angular.module("task1Hw", [])
+        .controller("mainController", function($scope) {
+            $scope.list = model;
+            $scope.add = function() {
+                $scope.list.items.push({name: $scope.name, description: $scope.description, date: $scope.date, completed: $scope.completed});
+            }
+        })
+    </script>
+</head>
+<body ng-controller="mainController">
+
+    <div class="container">
+
+        <h3>ToDo List</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Completed</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="item in list.items">
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.date}}</td>
+                <td ng-if="item.completed">&#9745;</td>
+                <td ng-if="!item.completed"></td>
+            </tr>
+        </table>
+
+        <div>
+            <!-- Форма для добавления новых задач -->
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" ng-model="name">
+            </div>
+            <div class="form-group">
+                <label>Due Date</label>
+                <input type="text" class="form-control" ng-model="date">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" ng-model="description"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Completed</label>
+                <input type="checkbox" class="checkbox" ng-model="completed">
+            </div>
+            <div class="form-group">
+                <input type="button" value="Add" class="btn btn-default" ng-click="add()">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
