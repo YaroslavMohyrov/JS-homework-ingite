@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html ng-app="task1Hw">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style>
+    </style>
+</head>
+<body ng-controller="mainController">
+    <div class="well">
+            <div class="form-group">
+                <label>A</label>
+                <input type="text" class="form-control" ng-model="a">
+                <label>B</label>
+                <input type="text" class="form-control" ng-model="b">
+            </div>
+            <div class="form-group">
+                <input type="button" class="btn btn-default" value="+" ng-click="sum()">
+                <input type="button" class="btn btn-default" value="-" ng-click="sub()">
+                <input type="button" class="btn btn-default" value="x" ng-click="mul()">
+                <input type="button" class="btn btn-default" value="/" ng-click="div()">
+            </div>
+    </div>
+    <div class="panel"><h1>{{result}}</h1></div>
+    <script>
+        var task1Hw = angular.module("task1Hw", [])
+        .controller("mainController", function($scope) {
+            $scope.sum = function() {
+                $scope.result = parseFloat($scope.a) + parseFloat($scope.b);
+            }
+
+            $scope.sub = function() {
+                $scope.result = parseFloat($scope.a) - parseFloat($scope.b);
+            }
+
+            $scope.mul = function() {
+                $scope.result = parseFloat($scope.a) * parseFloat($scope.b);
+            }
+
+            $scope.div = function() {
+                $scope.result = parseFloat($scope.a) / parseFloat($scope.b);
+            }
+        })
+    </script>
+</body>
+
+</html>

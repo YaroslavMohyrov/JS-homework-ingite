@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html ng-app="task3">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="mainController">
+    <table class="table">
+        <thead>
+            <tr>
+                <th ng-include="nameH"></th>
+                <th ng-include="priceH"></th>
+                <th ng-include="categoryH"></th>
+                <th ng-include="countH"></th>
+                <th ng-include="taxH"></th>
+                <th ng-include="expirationH"></th>
+            </tr>
+        </thead>
+        <tr ng-repeat="item in items">
+                <td ng-include="nameV"></td>
+                <td ng-include="priceV"></td>
+                <td ng-include="categoryV"></td>
+                <td ng-include="countV"></td>
+                <td ng-include="taxV"></td>
+                <td ng-include="expirationV"></td>
+        </tr>
+    </table>
+    <div class="form-group">
+        <label>Name<input type="checkbox" class="checkbox" ng-model="name" ng-change="nameChanged()"></label>
+    </div>
+    <div class="form-group">
+        <label>Price<input type="checkbox" class="checkbox" ng-model="price" ng-change="priceChanged()"></label>
+    </div>
+    <div class="form-group">
+        <label>Category<input type="checkbox" class="checkbox" ng-model="category" ng-change="categoryChanged()"></label>
+    </div>
+    <div class="form-group">
+        <label>Count<input type="checkbox" class="checkbox" ng-model="count" ng-change="countChanged()"></label>
+    </div>
+    <div class="form-group">
+        <label>Tax<input type="checkbox" class="checkbox" ng-model="tax" ng-change="taxChanged()"></label>
+    </div>
+    <div class="form-group">
+        <label>Expiration<input type="checkbox" class="checkbox" ng-model="expiration" ng-change="expirationChanged()"></label>
+    </div>
+    <script>
+        var task3 = angular.module("task3", [])
+        .controller("mainController", function($scope) {
+            $scope.items = [
+                { name: "B Item", price: 10.9, category: "Category 1", count: 10, tax: 1.12, expiration: 10 },
+                { name: "A Item", price: 1.1, category: "Category 1", count: 8, tax: 0.55, expiration: 12 },
+                { name: "D Item", price: 2.6, category: "Category 2", count: 7, tax: 0.22, expiration: 5 },
+                { name: "C Item", price: 17.5, category: "Category 2", count: 33, tax: 2.77, expiration: 10 }
+            ];
+                                       
+            $scope.nameChanged = function() {
+                if ($scope.name) {
+                    $scope.nameH = "./partials/nameH.html";
+                    $scope.nameV = "./partials/name.html";
+                } else {
+                    $scope.nameH = "";
+                    $scope.nameV = "";
+                }
+            }
+
+            $scope.priceChanged = function() {
+                if ($scope.price) {
+                    $scope.priceH = "./partials/priceH.html";
+                    $scope.priceV = "./partials/price.html";
+                } else {
+                    $scope.priceH = "";
+                    $scope.priceV = "";
+                }
+            }
+
+            $scope.categoryChanged = function() {
+                if ($scope.category) {
+                    $scope.categoryH = "./partials/categoryH.html";
+                    $scope.categoryV = "./partials/category.html";
+                } else {
+                    $scope.categoryH = "";
+                    $scope.categoryV = "";
+                }
+            }
+
+            $scope.countChanged = function() {
+                if ($scope.count) {
+                    $scope.countH = "./partials/countH.html";
+                    $scope.countV = "./partials/count.html";
+                } else {
+                    $scope.countH = "";
+                    $scope.countV = "";
+                }
+            }
+
+            $scope.taxChanged = function() {
+                if ($scope.tax) {
+                    $scope.taxH = "./partials/taxH.html";
+                    $scope.taxV = "./partials/tax.html";
+                } else {
+                    $scope.taxH = "";
+                    $scope.taxV = "";
+                }
+            }
+
+            $scope.expirationChanged = function() {
+                if ($scope.expiration) {
+                    $scope.expirationH = "./partials/expirationH.html";
+                    $scope.expirationV = "./partials/expiration.html";
+                } else {
+                    $scope.expirationH = "";
+                    $scope.expirationV = "";
+                }
+            }
+
+            $scope.name = true;
+            $scope.price = true;
+            $scope.category = true;
+            $scope.count = true;
+            $scope.tax = true;
+            $scope.expiration = true;
+
+            $scope.nameChanged();
+            $scope.priceChanged();
+            $scope.categoryChanged();
+            $scope.countChanged();
+            $scope.taxChanged();
+            $scope.expirationChanged();
+        });
+            
+    </script>
+</body>
+
+</html>

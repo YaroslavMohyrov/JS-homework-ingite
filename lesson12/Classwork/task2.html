@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html ng-app="task2">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="mainController">
+    <table class="table">
+        <thead>
+            <tr>
+                <th ng-switch on="name"><span ng-switch-when="true">Name</span></th>
+                <th ng-switch on="price"><span ng-switch-when="true">Price</span></th>
+                <th ng-switch on="category"><span ng-switch-when="true">Category</span></th>
+                <th ng-switch on="count"><span ng-switch-when="true">Count</span></th>
+                <th ng-switch on="tax"><span ng-switch-when="true">Tax</span></th>
+                <th ng-switch on="expiration"><span ng-switch-when="true">Expiration</span></th>
+            </tr>
+        </thead>
+        <tr ng-repeat="item in items">
+            <td ng-switch on="name"><span ng-switch-when="true">{{item.name}}</span></td>
+            <td ng-switch on="price"><span ng-switch-when="true">{{item.price}}</span></td>
+            <td ng-switch on="category"><span ng-switch-when="true">{{item.category}}</span></td>
+            <td ng-switch on="count"><span ng-switch-when="true">{{item.count}}</span></td>
+            <td ng-switch on="tax"><span ng-switch-when="true">{{item.tax}}</span></td>
+            <td ng-switch on="expiration"><span ng-switch-when="true">{{item.expiration}}</span></td> 
+        </tr>
+    </table>
+    <div class="form-group">
+        <label>Name<input type="checkbox" class="checkbox" ng-model="name"></label>
+    </div>
+    <div class="form-group">
+        <label>Price<input type="checkbox" class="checkbox" ng-model="price"></label>
+    </div>
+    <div class="form-group">
+        <label>Category<input type="checkbox" class="checkbox" ng-model="category"></label>
+    </div>
+    <div class="form-group">
+        <label>Count<input type="checkbox" class="checkbox" ng-model="count"></label>
+    </div>
+    <div class="form-group">
+        <label>Tax<input type="checkbox" class="checkbox" ng-model="tax"></label>
+    </div>
+    <div class="form-group">
+        <label>Expiration<input type="checkbox" class="checkbox" ng-model="expiration"></label>
+    </div>
+    <script>
+        var task2 = angular.module("task2", [])
+        .controller("mainController", function($scope) {
+            $scope.items = [
+             { name: "B Item", price: 10.9, category: "Category 1", count: 10, tax: 1.12, expiration: 10 },
+             { name: "A Item", price: 1.1, category: "Category 1", count: 8, tax: 0.55, expiration: 12 },
+             { name: "D Item", price: 2.6, category: "Category 2", count: 7, tax: 0.22, expiration: 5 },
+             { name: "C Item", price: 17.5, category: "Category 2", count: 33, tax: 2.77, expiration: 10 }];
+
+             $scope.name = true;
+        });
+            
+    </script>
+</body>
+
+</html>
