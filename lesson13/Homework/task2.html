@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html ng-app="task2Hw">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style>
+    </style>
+</head>
+<body ng-controller="mainController">
+    <div class="container">
+        <div class="well" ng-repeat="block in textBlocks | textSearch: searchPhrase">{{block}}</div>
+        <div class="form-group">
+            <input type="text" class="form-control" ng-model="phrase">
+            <input type="button" class="btn btn-default" value="search" ng-click="compare()">
+        </div>
+    </div>
+    <script>
+        var task2Hw = angular.module("task2Hw", [])
+        .controller("mainController", function($scope) {
+            $scope.textBlocks = [
+                "модуль",
+                "контроллер",
+                "директива",
+                "привязка данных",
+                "сервис",
+                "провайдер",
+                "рут модуль",
+                "фича модуль",
+                "директива ng-repeat",
+                "директива ng-if"
+            ];
+            $scope.phrase = "";
+            $scope.searchPhrase = "";
+            $scope.compare = function() {
+                $scope.searchPhrase = $scope.phrase;
+            }
+            
+        })
+        .filter("textSearch", function() {
+            return function(arr, searchPhrase) {
+                
+                searchPhrase = searchPhrase || "";
+                var vArr = [];
+                
+                var reg = new RegExp('^'+searchPhrase+'$');
+                for (i = 0; i < arr.length; i++) {
+                    if (reg.test(arr[i])) {
+                        vArr.push(arr[i]);
+                    }
+                }
+                return vArr;
+            }
+        })
+    </script>
+</body>
+
+</html>

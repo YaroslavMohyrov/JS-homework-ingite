@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html ng-app="task3Hw">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style>
+        form .ng-valid.ng-dirty {
+            background-color: lightgreen;
+        }
+
+        form .ng-invalid.ng-dirty {
+            background-color: lightcoral;
+        } 
+    </style>
+</head>
+<body ng-controller="mainController">
+    <div class="container">
+        <form class="well" name="regForm" novalidate>
+            <div class="form-group">
+                <label>ФИО</label>
+                <input class="form-control" type="text" ng-model="fullName" ng-pattern="fullNameRegexp" required>
+            </div>
+            <div class="form-group">
+                <label>email</label>
+                <input class="form-control" type="email" ng-model="email" required>
+            </div>
+            <div class="form-group">
+                <label>tel</label>
+                <input class="form-control" type="text" ng-model="tel" ng-pattern="telRegexp" required>
+            </div>
+            <div class="form-group">
+                <label>password</label>
+                <input class="form-control" type="password" ng-model="password" ng-change="refreshConfirmRegexp()" ng-pattern="passwordRegexp" required>
+            </div>
+            <div class="form-group">
+                <label>password confirm</label>
+                <input class="form-control" type="password" ng-model="passwordConfirm" ng-pattern="passwordConfirmRegexp" required>
+            </div>
+        </form>
+    </div>
+    <script>
+        var task3Hw = angular.module("task3Hw", [])
+        .controller("mainController", function($scope) {
+            $scope.fullNameRegexp = /^[A-Za-z]{3,10}\s[A-Za-z]{3,10}\s[A-Za-z]{3,15}$/;
+            $scope.telRegexp = /^[0-9]{3,}$/;
+            $scope.passwordRegexp = /^.{8,}$/;
+            $scope.refreshConfirmRegexp = function() {
+                if ($scope.password != undefined) {
+                    $scope.passwordConfirmRegexp = new RegExp('^'+$scope.password+'$');
+                } else {
+                    $scope.passwordConfirmRegexp = /^$/;
+                }
+            }
+            $scope.passwordConfirmRegexp = /^$/;
+        })
+    </script>
+</body>
+
+</html>

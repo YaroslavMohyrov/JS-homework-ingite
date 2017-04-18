@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html ng-app="task1">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style>
+        .bg {
+            background-color: lightsalmon;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body ng-controller="mainController">
+    <div ng-class="className">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem 
+        accusantium doloremque laudantium, totam rem aperiam eaque ipsa, 
+        quae ab illo inventore veritatis et quasi architecto beatae vitae 
+        dicta sunt, explicabo.</div>
+    <div class="form-group">
+        <input type="button" class="btn btn-primary" ng-click="addClasses()" value="Add classes">
+    </div>
+    <script>
+        var task1 = angular.module("task1", [])
+        .controller("mainController", function($scope) {
+            $scope.className = "";
+            $scope.addClasses = function() {
+                $scope.className = "bg bold-text";
+            }
+        })
+    </script>
+</body>
+
+</html>
