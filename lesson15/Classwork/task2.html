@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html ng-app="task2">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="mainController">
+    <div class="form-group">
+        <button class="btn btn-default" ng-click="interpolateExp()">Show</button>
+    </div>
+    {{result}}
+    <script>
+        var task2 = angular.module("task2", [])
+        .controller("mainController", function($scope, $interpolate) {
+            var exp = "Hello my name is {{name}}";
+            var data = { name: "<strong>Ivan</strong>" }
+
+            $scope.interpolateExp = function () {
+                var fn = $interpolate(data.name);
+                $scope.result = fn();
+            }
+        })
+    </script>
+</body>
+
+</html>

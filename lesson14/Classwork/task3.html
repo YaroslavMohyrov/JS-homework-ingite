@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html ng-app="task3">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style> 
+    </style>
+</head>
+<body ng-controller="mainController">
+    <table class="table">
+        <tr ng-repeat="item in data">
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+        </tr>
+    </table>
+    <script>
+        var task3 = angular.module("task3", [])
+        .controller("mainController", function($scope, $http) {
+                $http.get('./data/data.json').then(function successHandler(response) {
+                    $scope.data = response.data;
+                }, function successHandler(response) {
+                    alert('Error: '+response.statusText);
+                });
+        })
+    </script>
+</body>
+
+</html>

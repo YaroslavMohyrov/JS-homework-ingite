@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html ng-app="task2Hw">
+<head>
+    <title>ToDo List (Task2)</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./bootstrap-theme.css" rel="stylesheet" />
+    <script>
+        var model = { items: [
+            { name: "Купить молоко", description: "Сходить на рынок и купить молоко", date: "2/18/2015", completed: false},
+            { name: "Посмотреть видео урок по AngularJS", description: "Досмотреть до конца урок на itvdn.com", date: "2/18/2015", completed: false}
+        ] }
+
+        var task1Hw = angular.module("task2Hw", [])
+        .controller("mainController", ["$scope", "sendData", function($scope, sendData) {
+            $scope.edit = false;
+            $scope.list = model;
+            $scope.add = function() {
+                $scope.list.items.push({name: $scope.name, description: $scope.description, date: $scope.date, completed: $scope.completed});
+                sendData.send($scope.list);
+            }
+            $scope.initEditForm = function(item) {
+                $scope.edit = true;
+                $scope.name = item.name;
+                $scope.description = item.description;
+                $scope.date = item.date;
+                $scope.completed = item.completed;
+                $scope.edit = function() {
+                    item.name = $scope.name;
+                    item.description = $scope.description;
+                    item.date = $scope.date;
+                    item.completed = $scope.completed;
+                    sendData.send($scope.list);
+                    
+                    $scope.edit = false;
+                    $scope.name = "";
+                    $scope.description = "";
+                    $scope.date = "";
+                    $scope.completed = false;
+                } 
+            }
+            $scope.back = function() {
+                $scope.edit = false;
+                $scope.name = "";
+                $scope.description = "";
+                $scope.date = "";
+                $scope.completed = false;
+            }
+
+            
+        }])
+        .config(function ($httpProvider) {
+            $httpProvider.interceptors.push(function () {
+                return {
+                    request: function (config) {
+                        // выполниться перед отправкой запроса
+                        alert(JSON.stringify(config.data));
+                        return config;
+                    }
+                }
+            });
+        })
+        .factory("sendData", ["$http", function($http) {
+            return {
+                send: function(model) {
+                    $http.post("./server", model).then(function fulfilled(response) {
+                        console.log(response.responseText);
+                    }, function rejected(response) {
+                        console.log("Error "+response.status+": "+ response.statusText);
+                    });
+                }
+            }
+        }])
+    </script>
+</head>
+<body ng-controller="mainController">
+
+    <div class="container">
+
+        <h3>ToDo List</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Completed</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tr ng-repeat="item in list.items">
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.date}}</td>
+                <td ng-if="item.completed">&#9745;</td>
+                <td ng-if="!item.completed"></td>
+                <td><input type="button" value="Edit" class="btn btn-primary" ng-click="initEditForm(item)"></td>
+            </tr>
+        </table>
+
+        <div>
+            <!-- Форма для добавления новых задач -->
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" ng-model="name">
+            </div>
+            <div class="form-group">
+                <label>Due Date</label>
+                <input type="text" class="form-control" ng-model="date">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" ng-model="description"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Completed</label>
+                <input type="checkbox" class="checkbox" ng-model="completed">
+            </div>
+            <div class="form-group">
+                <input ng-if="!edit" type="button" value="Add" class="btn btn-default" ng-click="add()">
+                <div ng-if="edit">
+                    <input type="button" value="Edit" class="btn btn-primary" ng-click="edit()">
+                    <input type="button" value="Back" class="btn btn-default" ng-click="back()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

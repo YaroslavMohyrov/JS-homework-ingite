@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html ng-app="task3Hw">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>task2</title>
+    <link rel="stylesheet" href="./Task/Libraries/bootstrap.css">
+    <link rel="stylesheet" href="./Task/Libraries/bootstrap-theme.css">
+    <script src="./Task/Libraries/angular.js"></script>
+    <script src="./Task/Libraries/angular_route.js"></script>
+    <script>
+        var people = [{name: 'Vasya', age: 20, email: 'vasya@mail.ru', employed: false}, 
+                    {name: 'Masha', age: 25, email: 'm@m', employed: true}, 
+                    {name: 'Petya', age: 27, email: 'petya@stuff', employed: true}, 
+                    {name: 'John', age: 36, email: 'johnDoe@mail', employed: true},
+                    {name: 'Jane', age: 28, email: 'janeDoe@mail', employed: false}];
+
+        var task3Hw = angular.module('task3Hw', ['ngRoute'])
+        .config(function ($routeProvider, $locationProvider) {
+            $routeProvider
+            .when('/contact', {
+                templateUrl: 'Task/contact.html',
+            })
+            .when('/home', {
+                templateUrl: 'Task/home.html',
+            })
+            .when('/contact/:name/:age/:email/:employed', {
+                templateUrl: 'Task/contact.html',
+                controller: 'contactController'
+            })
+            .otherwise({
+                redirectTo: '/home'
+            })
+            $locationProvider.html5Mode(true);
+        })
+        .controller('mainController', function($scope, $location) {
+            $scope.list = people;
+            $scope.goto = function(e, route) {
+                $location.path(route);
+                e.preventDefault();
+            }
+        })
+        .controller('contactController', function($scope, $routeParams) {
+            $scope.name = $routeParams.name;
+            $scope.age = $routeParams.age;
+            $scope.email = $routeParams.email;
+            $scope.isEmployed = ($routeParams.employed == 'true');
+        })
+    </script>
+</head>
+<body ng-controller="mainController">
+        <div class="well">
+            <ul class="nav nav-tabs">
+                <li><a ng-click="goto($event,'/contact')" href="#">Contact</a></li>
+                <li><a ng-click="goto($event,'/home')" href="#">Home</a></li> 
+            </ul>
+        </div>
+        <div ng-view></div>
+
+</body>
+</html>

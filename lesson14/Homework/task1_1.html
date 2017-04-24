@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html ng-app="task1Hw">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style> 
+    </style>
+</head>
+<body ng-controller="mainController">
+    <div class="container">
+        <div class="form-group">
+            <label>A</label>
+            <input type="text" class="form-control" ng-model="a">
+        </div>
+        <div class="form-group">
+            <label>B</label>
+            <input type="text" class="form-control" ng-model="b">
+        </div>
+        <div class="form-group">
+            <input type="button" class="btn btn-default" value="+" ng-click="sum()">
+            <input type="button" class="btn btn-default" value="-" ng-click="sub()">
+            <input type="button" class="btn btn-default" value="x" ng-click="mul()">
+            <input type="button" class="btn btn-default" value="/" ng-click="div()">
+        </div>
+        <div class="well">
+            <h3>{{result}}</h3>
+        </div>
+    </div>
+    <script>
+        var arithModule = angular.module("arithModule", [])
+        .service("operations", function() {
+            return {
+                sum: function (a, b) {
+                    return parseFloat(a) + parseFloat(b);
+                },
+                sub: function (a, b) {
+                    return parseFloat(a) - parseFloat(b);
+                },
+                mul: function (a, b) {
+                    return parseFloat(a) * parseFloat(b);
+                },
+                div: function (a, b) {
+                    return parseFloat(a) / parseFloat(b);
+                }
+            }
+        })
+
+        var task1Hw = angular.module("task1Hw", ["arithModule"])
+        .controller("mainController", function($scope, operations) {
+            $scope.sum = function() { $scope.result = operations.sum($scope.a, $scope.b) }
+            $scope.sub = function() { $scope.result = operations.sub($scope.a, $scope.b) }
+            $scope.mul = function() { $scope.result = operations.mul($scope.a, $scope.b) }
+            $scope.div = function() { $scope.result = operations.div($scope.a, $scope.b) }
+        })
+    </script>
+</body>
+
+</html>

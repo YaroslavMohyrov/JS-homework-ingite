@@ -1,0 +1,10 @@
+﻿<form name="contactForm">
+ <label>username:   <input type="text" class="input-lg" name="userName"/></label>
+ <label>age:   <input type="text" class="input-lg" name="age" /></label>
+ <label>email: <input type="email" class="input-lg" name="userEmail" /></label>
+    <label>employed: <input type="checkbox" name="employed"></label>
+</form>
+
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="item in list" ng-click="goto($event, '/contact/'+item.name+'/'+item.age+'/'+item.email+'/'+item.employed.toString())">{{item.name}}</li>
+</ul>

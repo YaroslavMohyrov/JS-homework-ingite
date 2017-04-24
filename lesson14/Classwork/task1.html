@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html ng-app="task1">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style> 
+    </style>
+</head>
+<body ng-controller="mainController">
+    <div class="container">
+        <input type="button" class="btn btn-primary" value="Click" ng-click="getClicks()">
+    </div>
+    <script>
+        var task1 = angular.module("task1", [])
+        .controller("mainController", ["$scope", "consoleClickCounterService", function($scope, consoleClickCounterService) {
+            $scope.getClicks = function() {
+                consoleClickCounterService();                
+            }
+        }])
+        .factory("consoleClickCounterService", function() {
+            var clickCount = 0;
+            return function() {
+                console.log("Click count: " + ++clickCount);
+            }
+        })
+    </script>
+</body>
+
+</html>

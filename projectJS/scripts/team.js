@@ -52,9 +52,9 @@ function createCircle(container) {
         strokeWidth: 3.5,
         step: function(state, circle) {
             var value = Math.round(circle.value() * 100);
-            if (value === 0) {
-                circle.setText('');
-            } else {
+             if (value === 0) {
+                 circle.setText('');
+             } else {
                 circle.setText(value+'%');
             }
 

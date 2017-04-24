@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html ng-app="task1Hw">
+
+<head>
+    <meta charset="utf-8">
+    <title>task1</title>
+    <link rel="stylesheet" href="Task/Libraries/bootstrap.css">
+    <link rel="stylesheet" href="Task/Libraries/bootstrap-theme.css">
+    <script src="Task/Libraries/angular.js"></script>
+    <script src="Task/Libraries/angular_route.js"></script>
+    <script>
+        var task1Hw = angular.module('task1Hw', ['ngRoute'])
+        .config(function ($routeProvider) {
+            $routeProvider
+            .when('/contact', {
+                templateUrl: 'Task/contact.html',
+            })
+            .when('/home', {
+                templateUrl: 'Task/home.html',
+            })
+        })
+    </script>
+</head>
+<body>
+        <div class="well">
+            <ul class="nav nav-tabs">
+                <li><a href="#/contact">Contact</a></li>
+                <li><a href="#/home">Home</a></li> 
+            </ul>
+        </div>
+        <div ng-view></div>
+
+</body>
+
+</html>

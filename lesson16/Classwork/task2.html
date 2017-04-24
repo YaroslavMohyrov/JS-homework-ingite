@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML>
+<html ng-app="task2">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>task2</title>
+    <link rel="stylesheet" href="Task/Libraries/bootstrap.css">
+    <link rel="stylesheet" href="Task/Libraries/bootstrap-theme.css">
+    <script src="Task/Libraries/angular.js"></script>
+    <script src="Task/Libraries/angular_route.js"></script>
+    <script>
+        var task2 = angular.module('task2', ['ngRoute'])
+        .config(function ($routeProvider, $locationProvider) {
+            $routeProvider
+            .when('/view1', {
+                templateUrl: 'Task/view1.html',
+            })
+            .when('/view2', {
+                templateUrl: 'Task/view2.html',
+            })
+            .otherwise({
+                redirectTo: '/view1'
+            })
+            $locationProvider.html5Mode(true);
+        })
+        .controller('mainController', function($scope, $location) {
+            $scope.goto = function(e, route) {
+                $location.path(route);
+                e.preventDefault();  
+            }
+        })
+    </script>
+</head>
+<body ng-controller="mainController">
+        <div class="well">
+            <div class="panel panel-primary well">
+                <input class="btn-lg btn-info" ng-click="goto($event,'/view1')" type="button" value="View 1">
+                <input class="btn-lg btn-info" ng-click="goto($event,'/view2')" type="button" value="View 2">
+            </div>
+        </div>
+        <div ng-view></div>
+
+</body>
+
+</html>
