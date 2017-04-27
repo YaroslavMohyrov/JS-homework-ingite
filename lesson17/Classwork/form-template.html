@@ -1,0 +1,18 @@
+<form name="myForm" novalidate>
+    <div class="form-group">
+        <label>username</label>
+        <input type="text" class="form-control" ng-model="userName" ng-pattern="userNameRegexp" required>
+    </div>
+    <div class="form-group">
+        <label>login</label>
+        <input type="text" class="form-control" ng-model="login" ng-pattern="loginRegexp" required>
+    </div>
+    <div class="form-group">
+        <label>password</label>
+        <input type="text" class="form-control" ng-model="password" ng-pattern="passwordRegexp" required>
+    </div>
+    <div class="form-group">
+        <label>e-mail</label>
+        <input type="email" class="form-control" ng-model="email" required>
+    </div>
+</form>

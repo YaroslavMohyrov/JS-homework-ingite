@@ -7,11 +7,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 </head>
 <body ng-controller="mainController">
-
+    <div class="well">
+        <div class="form-group">
+            <label>Введите выражение:</label>
+            <input class="form-control" type="text" ng-model="exp">
+        </div>
+        <div class="form-group">
+            <input class="btn btn-default" type="button" ng-click="calc()" value="Calculate">
+        </div>
+        <h3>{{result}}</h3>
+    </div>
     <script>
         var task1 = angular.module("task1", [])
         .controller("mainController", function($scope, $parse) {
-            
+            $scope.calc = function () {
+                $scope.result = $parse($scope.exp)($scope);
+            }
         })
     </script>
 </body>

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html ng-app="task3">
+
+<head>
+    <meta charset="utf-8">
+    <title>task3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+        var task3 = angular.module('task3', [])
+        .directive('customDirective', function () {
+            return {
+                template: '<button class="btn btn-default" ng-transclude></button>',
+                transclude: true,
+                restrict: 'A',
+                replace: true,
+                scope: { }
+            }
+        })
+    </script>
+    <div custom-directive>’myButton’</div>
+</body>
+
+</html>

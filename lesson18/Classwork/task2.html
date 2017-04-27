@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html ng-app="task2">
+
+<head>
+    <meta charset="utf-8">
+    <title>task2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+        var task2 = angular.module('task2', [])
+        .directive('counter', function () {
+            return {
+                controller: function ($scope, $interval) {
+                    $scope.startCount = function() {    
+                        if (!$scope.interval) {
+                            $scope.count = 0;
+                            $scope.interval = $interval(function() {$scope.count++}, 1000);
+                        }
+                    }
+                    this.scope = $scope;
+                },
+                template: '<div class="well"><button class="btn btn-default" ng-click="startCount()">Start count</button><h3>{{count}}</h3></div>',
+                restrict: 'E',
+                replace: true,
+                scope: { }
+            }
+        })
+        .directive('countLog', function () {
+            return {
+                restrict: 'A',
+                require: 'counter',
+                link: function (scope, elem, attrs, counter) {
+                    counter.scope.$watch('count', function(newVal) {
+                        if (counter.scope.count) {console.log('count: '+newVal)}
+                    })
+                },
+                scope: false
+            }
+        })
+    </script>
+    <counter count-log></counter>
+</body>
+
+</html>

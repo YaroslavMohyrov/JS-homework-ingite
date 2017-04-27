@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html ng-app="task3Hw">
+
+<head>
+    <meta charset="utf-8">
+    <title>task3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+    <script>
+        var task3Hw = angular.module('task3Hw', [])
+        .directive('dialogBox', function () {
+            return {
+                link: function (scope, element, attrs) {
+                    confirm(element.html());
+                },
+                restrict: 'A',
+                scope: { }
+            }
+        })
+    </script>
+    <div dialog-box>
+        <ul class="list-group-item">
+            <li class="list-group-item">Item 1</li>
+            <li class="list-group-item">Item 2</li>
+            <li class="list-group-item">Item 3</li>
+            <li class="list-group-item">Item 4</li>
+            <li class="list-group-item">Item 5</li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html ng-app="task2Hw">
+
+<head>
+    <meta charset="utf-8">
+    <title>task2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var items = ["Table", "Chair", "Pillow", "Picture", "Lamp"];
+        var task2Hw = angular.module('task2Hw', [])
+        .directive('menu', function () {
+            return {
+                controller: function ($scope) {
+                    this.elem = angular.element('<ul class="list-group">');
+                    $scope.elem = this.elem;
+                },
+                link: function (scope, element, attrs) {
+                    scope.data = items;
+                    
+                    if (angular.isDefined(scope.data)) {
+                        element.append(scope.elem);
+                        for (var i = 0; i < scope.data.length; i++) {
+                            var item = angular.element('<li class="list-group-item">').text(scope.data[i]);
+                            scope.elem.append(item);
+                        }
+                    }
+                },
+                priority: 1,
+                restrict: 'A',
+                scope: { }
+            }
+        })
+        .directive('menuContent', function () {
+            return {
+                restrict: 'A',
+                require: 'menu',
+                link: function (scope, elem, attrs, menu) {
+                    var items = elem.find('li');
+                    alert(items);
+                    for (var i = 0; i < items.length; i++) {    
+                        if ((i + 1) % 2 == 0) {
+                            items.eq(i).addClass('red');
+                        }
+                    }
+                },
+                priority: 2
+            }
+        })
+    </script>
+    <div menu menu-content></div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html ng-app="task1Hw">
+
+<head>
+    <meta charset="utf-8">
+    <title>task1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style>
+        .tbl td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body ng-controller="mainController">
+    <script>
+        var task1Hw = angular.module('task1Hw', [])
+        .controller('mainController', function($scope) {
+            $scope.arr = [{name: 'Vasya', age: 20, email: 'vasya@mail.ru', employed: false}, 
+                        {name: 'Masha', age: 25, email: 'm@m', employed: true}, 
+                        {name: 'Petya', age: 27, email: 'petya@stuff', employed: true}, 
+                        {name: 'John', age: 36, email: 'johnDoe@mail', employed: true},
+                        {name: 'Jane', age: 28, email: 'janeDoe@mail', employed: false}]
+        })
+        .directive('itemTable', function () {
+            return {
+                link: function (scope, element, attributes) {
+                    var data = scope.arr;
+
+                    if (angular.isDefined(data)) {
+                        var elem = angular.element('<table class="tbl">');
+                        element.append(elem);
+                        for (var i = 0; i < data.length; i++) {
+                            var row = angular.element('<tr>');
+                            row.append(angular.element('<td>').text(data[i].name));
+                            row.append(angular.element('<td>').text(data[i].age));
+                            row.append(angular.element('<td>').text(data[i].email));
+                            row.append(angular.element('<td>').text(data[i].employed));
+                            elem.append(row);
+                        }
+                    }
+                },
+                restrict: 'A',
+            }
+        })
+    </script>
+    <div item-table></div>
+</body>
+
+</html>

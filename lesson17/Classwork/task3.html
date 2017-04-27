@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html ng-app="task3">
+
+<head>
+    <meta charset="utf-8">
+    <title>task3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style>
+                form .ng-valid.ng-dirty {
+            background-color: lightgreen;
+        }
+
+        form .ng-invalid.ng-dirty {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body ng-controller="mainController">
+    <script>
+        var task3 = angular.module('task3', [])
+        .controller('mainController', function($scope) {
+            $scope.arr = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
+        })
+        .directive('customForm', function () {
+            return {
+                link: function (scope) {
+                    scope.userNameRegexp = /^[A-Za-z0-9]{3,10}$/;
+                    scope.loginRegexp = /^[A-Za-z0-9]{3,10}$/;
+                    scope.passwordRegexp = /^.{8,}$/;
+                },
+                restrict: 'E',
+                templateUrl: './form-template.html',
+                replace: true
+            }
+        })
+    </script>
+    <div class="container">
+        <div class="well">
+            <custom-form></custom-form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html ng-app="task1">
+
+<head>
+    <meta charset="utf-8">
+    <title>task1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+    </script>
+</head>
+<body ng-controller="mainController">
+    <script>
+        var task1 = angular.module('task1', [])
+        .controller('mainController', function($scope) {
+            $scope.arr = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
+        })
+        .directive('arrToList', function () {
+            return function (scope, element, attributes) {
+                var data = scope.arr;
+
+                if (angular.isDefined(data)) {
+                    var elem = angular.element('<ul class="list-group">');
+                    element.append(elem);
+                    for (var i = 0; i < data.length; i++) {
+                        var item = angular.element('<li class="list-group-item">').text(data[i]);
+                        elem.append(item);
+                    }
+                }
+            }
+        })
+    </script>
+    <div arr-to-list></div>
+</body>
+
+</html>

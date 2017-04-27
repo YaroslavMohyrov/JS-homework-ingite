@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html ng-app="task2">
+<html ng-app="task3">
 
 <head>
     <meta charset="utf-8">
@@ -8,12 +8,12 @@
 </head>
 <body ng-controller="mainController">
     <script>
-        var task2 = angular.module("task2", [])
-        .controller("mainController", function($scope, $interpolate, $compile) {
-            var templ = "Hello my name is {{name}}";
+        var task3 = angular.module("task3", [])
+        .controller("mainController", function($scope, $compile) {
             var data = { name: "<strong>Ivan</strong>" }
-            var fn = $interpolate(templ);
-            angular.element(document.body).append(fn(data));
+            
+            var fn = $compile("<span>Hello my name is "+ data.name +"</span>")($scope);
+            angular.element(document.body).append(fn);
         })
     </script>
 </body>

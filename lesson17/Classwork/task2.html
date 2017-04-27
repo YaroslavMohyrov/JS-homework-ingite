@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html ng-app="task2">
+
+<head>
+    <meta charset="utf-8">
+    <title>task2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+    </script>
+</head>
+<body>
+    <script>
+        var task2 = angular.module('task2', [])
+        .directive('customForm', function () {
+            return {
+                restrict: 'E',
+                templateUrl: './form-template.html',
+                replace: true
+            }
+        })
+    </script>
+    <div class="container">
+        <div class="well">
+            <custom-form></custom-form>
+        </div>
+    </div>
+</body>
+
+</html>

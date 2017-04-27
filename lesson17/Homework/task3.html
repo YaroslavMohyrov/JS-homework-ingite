@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html ng-app="task3Hw">
+
+<head>
+    <meta charset="utf-8">
+    <title>task3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+        var task3Hw = angular.module('task3Hw', [])
+        .directive('menu', function () {
+            return {
+                link: function(scope, element) {
+                    scope.data = [
+                        { title: "home", url: "./someUrl"},
+                        { title: "portfolio", url: "./someUrl"},
+                        { title: "clients", url: "./someUrl"},
+                        { title: "team", url: "./someUrl"},
+                        { title: "contact", url: "./someUrl"},
+                    ];
+                    var elem = angular.element('<nav>');
+                    element.replaceWith(elem);
+                    for (var i = 0; i < scope.data.length; i++) {
+                        var anchor = angular.element('<a href="'+scope.data[i].url+'">').text(scope.data[i].title);
+                        var separator = angular.element('<span>').text(' | ');
+                        elem.append(anchor);
+                        if (i < scope.data.length - 1) elem.append(separator);
+                    }
+
+                },
+                restrict: 'A',
+                scope: { }
+            }
+        })
+    </script>
+    <div menu></div>
+</body>
+
+</html>
