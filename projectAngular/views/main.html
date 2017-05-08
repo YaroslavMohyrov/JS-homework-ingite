@@ -1,0 +1,268 @@
+<header>
+        <div class="container">
+            <img id="logo" src="./img/logo.svg">
+            <ul id="menu">
+                <li ng-click="scrollTo($event, 'landing')">
+                    <span>HOME</span>
+                    <div class="menu-item-hover"></div>
+                </li>
+                <li ng-click="scrollTo($event, 'services')">
+                    <span style="margin-left: 3px">SERVICES</span>
+                    <div class="menu-item-hover"></div>
+                </li>
+                <li ng-click="scrollTo($event, 'portfolio')">
+                    <span style="margin-left: -5px">PORTFOLIO</span>
+                    <div class="menu-item-hover"></div>
+                </li>
+                <li ng-click="scrollTo($event, 'team')">
+                    <span>ABOUT</span>
+                    <div class="menu-item-hover"></div>
+                </li>
+                <li ng-click="scrollTo($event, 'news')">
+                    <span>NEWS</span>
+                    <div class="menu-item-hover"></div>
+                </li>
+                <li ng-click="scrollTo($event, 'contact')">
+                    <span>CONTACT</span>
+                    <div class="menu-item-hover"></div>
+                </li>
+            </ul>
+            <div id="burger" ng-click="toggleBurgerMenu()">
+                <div class="burger-line" style="top: 10px"></div>
+                <div class="burger-line" style="top: 50%"></div>
+                <div class="burger-line" style="bottom: 10px;"></div>
+            </div>
+        </div>
+        <ul id="burger-menu" ng-if="isBurgerOpened">
+            <a href="#" ng-click="scrollTo($event, 'landing')"><li>HOME</li></a>
+            <a href="#" ng-click="scrollTo($event, 'services')"><li>SERVICES</li></a>
+            <a href="#" ng-click="scrollTo($event, 'portfolio')"><li>PORTFOLIO</li></a>
+            <a href="#" ng-click="scrollTo($event, 'team')"><li>ABOUT</li></a>
+            <a href="#" ng-click="scrollTo($event, 'news')"><li>NEWS</li></a>
+            <a href="#" ng-click="scrollTo($event, 'contact')"><li>CONTACT</li></a>
+        </ul>
+    </header>
+    <main>
+        <div id="landing">
+            <div class="container">
+                <div id="landing-content">
+                    <h1>WE MAKE WEBSITES</h1>
+                    <button id="start-tour-btn" class="white-text" ng-click="scrollTo($event, 'portfolio')">START TOUR</button>
+                </div>
+            </div>
+        </div>
+        <div id="services">
+            <div class="container">
+                <ul id="service-list">
+                    <li>
+                        <button class="service-btn" ng-click="changeTab(0)">
+                            <img src="./img/service_web.svg" style="margin-bottom: 48px">
+                            <div>WEB DESIGN</div>
+                        </button>
+                        <div class="pointer-block pointer-block-active" style="border-left: none;"></div>
+                    </li>
+                    <li>
+                        <button class="service-btn" ng-click="changeTab(1)">
+                            <img src="./img/service_graphic.svg" style="margin-left: 4px; margin-bottom: 46px">
+                            <div>GRAPHIC DESIGN</div>
+                        </button>
+                        <div class="pointer-block"></div>
+                    </li>
+                    <li>
+                        <button class="service-btn" ng-click="changeTab(2)">
+                            <img src="./img/service_prog.svg" style="margin-top: -5px; margin-bottom: 41px">
+                            <div>PROGRAMMING</div>
+                        </button>
+                        <div class="pointer-block"></div>
+                    </li>
+                    <li>
+                        <button class="service-btn" ng-click="changeTab(3)">
+                            <img src="./img/service_photo.svg" style="margin-bottom: 45px;">
+                            <div>PHOTOGRAPHY</div>
+                        </button>
+                        <div class="pointer-block" style="border-right: none;"></div>
+                    </li>
+                </ul>
+                <div id="service-slider" ng-carousel ng-carousel-name="service-carousel">
+                    <slidecontainer class="carousel-ignore-first-slide">
+                        <slide>
+                            <img src="./img/service_web.svg" style="margin-bottom: 48px">
+                            <div>WEB DESIGN</div>
+                        </slide>
+                        <slide>
+                            <img src="./img/service_graphic.svg" style="margin-left: 4px; margin-bottom: 46px">
+                            <div>GRAPHIC DESIGN</div>
+                        </slide>
+                        <slide>
+                            <img src="./img/service_prog.svg" style="margin-bottom: 41px">
+                            <div>PROGRAMMING</div>
+                        </slide>
+                        <slide>
+                            <img src="./img/service_photo.svg" style="margin-bottom: 45px;">
+                            <div>PHOTOGRAPHY</div>
+                        </slide>
+                    </slidecontainer>
+                    <div class="carousel-arrow carousel-arrow-left">
+                        <button id="btn-left" class="circle-btn" ng-click="changeTab(service - 1)"></button>
+                    </div>
+                    <div class="carousel-arrow carousel-arrow-right">
+                        <button id="btn-right" class="circle-btn" ng-click="changeTab(service + 1)"></button>
+                    </div>
+                    <div class="pointer-block pointer-block-active" style="position: absolute; bottom: 0; left: 50%; margin-left: -35px"></div>
+                </div>
+                <div id="services-line"></div>
+                <div ng-switch on="service">
+                    <div ng-switch-when="0" class="service-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute i rure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                    <div ng-switch-when="1" class="service-text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est. Excepteur sint occaecat cupidatat non proident.</div>
+                    <div ng-switch-when="2" class="service-text">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Et harum quidem rerum facilis est et expedita distinctio.</div>                  
+                    <div ng-switch-when="3" class="service-text">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt ni dictum porta.</div>
+                </div>
+            </div>
+        </div>
+        <div id="fully-responsive">
+            <div class="container">
+                <ul id="tabs">
+                    <li>START TOUR</li>
+                    <li>FOR ALL DEVICES</li>
+                </ul>
+                <div id="phones">
+                    <img src="./img/phones.svg">
+                    <div id="screen-placeholder"></div>
+                </div>
+                <div id="fully-responsive-content">
+                    <h2 style="margin-bottom: 30px;">Fully Responsive</h2>
+                    <p id="fully-responsive-text">Eum cu tantas legere complectitur, hinc utamur ea eam. Lorem ipsum dolor sit amet, volumus temporibus definitionem id ius, vel ut magna timeam appareat, movet timeam maiorum an ius.<br/> Sea libris dictas lucilius et. Ne cibo urbanitas pri, qui ad populo accusamus. Quod congue ea ius, nisl aperiri sit ut.</p>
+                    <button id="getnow-btn" class="cyan-text" ng-click="scrollTo($event, 'contact')">GET NOW</button>
+                </div>
+            </div>
+        </div>
+        <div id="portfolio">
+            <div class="container">
+                <h2 style="margin-bottom: 22px;">Our Portfolio</h2>
+                <div class="separator-line" style="margin-bottom: 26px;"></div>
+                <p class="description">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>
+                <ul id="filter">
+                    <li class="filter-btn-active" ng-click="setFilter($event.target, 'ALL')">ALL</li>
+                    <li ng-click="setFilter($event.target, 'WEB')">WEB</li>
+                    <li ng-click="setFilter($event.target, 'PHOTOGRAPHY')">PHOTOGRAPHY</li>
+                    <li ng-click="setFilter($event.target, 'GRAPHIC DESIGN')">GRAPHIC DESIGN</li>
+                </ul>
+            </div>
+            <div id="picture-container">
+                <div class="pic-wrapper" ng-repeat="picture in pictures | filter : filterFunc">
+                    <img ng-src="{{picture.url}}">
+                    <div class="hovered-img">
+                        <div class="hovered-content">
+                            <div class="hovered-title">{{picture.title}}</div>
+                            <div>{{picture.category}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="counters" in-view="$inview&&initCount()">
+            <div class="container">
+                <ul id="counters-list">
+                    <li>
+                        <img src="./img/stats_proj.svg" style="margin-top: 12px;">
+                        <div class="count white-text" count-to="{{projects}}" duration="3" count-from="0"></div>
+                        <div class="counter-name white-text">COMPLETED PROJECTS</div>
+                    </li>
+                    <li>
+                        <img src="./img/stats_clicks.svg">
+                        <div class="count white-text" count-to="{{clicks}}" duration="3" sep="true" count-from="0"></div>
+                        <div class="counter-name white-text">CLICK PRESSED</div>
+                    </li>
+                    <li>
+                        <img src="./img/stats_mails.svg" style="margin-top: 8px;">
+                        <div class="count white-text" count-to="{{mails}}" duration="3" count-from="0"></div>
+                        <div class="counter-name white-text">MAILS SENTED &#38; RECIVED</div>
+                    </li>
+                    <li>
+                        <img src="./img/stats_jokes.svg" style="margin-top: 13px;">
+                        <div class="count white-text" count-to="{{jokes}}" duration="3" count-from="0"></div>
+                        <div class="counter-name white-text">JOKES TOLDS</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="team">
+            <div class="container">
+                <h2 style="margin-bottom: 22px;">We are the one</h2>
+                <div class="separator-line" style="margin-bottom: 26px;"></div>
+                <p class="description">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>
+                <ul id="team-list">
+                    <li><team avatar-url="./img/creative_director.jpg" name="John Doe" employment="Creative Director" fb-url="#" tw-url="#" gl-url="#" db-url="#"></li>
+                    <li><team avatar-url="./img/art_director.jpg" name="John Williams" employment="Art Director"></li>
+                    <li><team avatar-url="./img/web_developer.jpg" name="John Johnson" employment="Web Developer"></li>
+                    <li><team avatar-url="./img/photographer.jpg" name="John Smith" employment="Photographer"></li>
+                </ul>
+            </div>
+        </div>
+        <div id="news">
+            <div class="container">
+                <h2 style="margin-bottom: 22px;">Check our news</h2>
+                <div class="separator-line" style="margin-bottom: 26px;"></div>
+                <div class="description">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</div>
+                <div id="news-container">
+                    <div class="news-item" ng-repeat="item in news">
+                        <div class="news-date">
+                            <div class="news-date-day cyan-text">{{item.date | date: "dd"}}</div>
+                            <div class="news-date-mon">{{item.date | date : "MMMM"}}</div>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-description">{{item.text}}</div>
+                            <div class="news-ref"><a class="cyan-text" ng-href="#/news/{{item.id}}">Read More</a></div>
+                            <div class="news-separator"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact">
+            <div class="container">
+                <h2 class="white-text" style="margin-bottom: 22px;">Contact Us</h2>
+                <div class="separator-line" style="margin-bottom: 26px;"></div>
+                <div class="description white-text">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</div>
+                <form name="mesForm" novalidate>
+                    <div id="inputs-container">
+                        <div class="outer-wrapper">
+                            <div class="input-wrapper">
+                                <input type="text" placeholder="Your name here" name="name" ng-model="name" ng-pattern="nameReg">
+                                <div class="input-border"></div>      
+                            </div>
+                            <div ng-if="mesForm.name.$invalid" class="error-msg"><div>Only latin alphabet letters allowed!</div></div>
+                        </div>
+                        <div class="outer-wrapper" style="margin-right: 0;">
+                            <div class="input-wrapper">
+                                <input type="text" placeholder="Your mail here" name="email" ng-model="email" ng-pattern="mailReg">
+                                <div class="input-border"></div>
+                            </div>
+                            <div ng-if="mesForm.email.$invalid" class="error-msg"><div>Please enter a valid e-mail address!</div></div>
+                        </div>
+                        <div class="outer-wrapper" style="width: 100%;">
+                            <div class="input-wrapper">
+                                <input type="text" placeholder="Your message here" name="message" ng-model="message" ng-pattern="mesReg">
+                                <div class="input-border"></div>
+                            </div>
+                            <div ng-if="mesForm.message.$invalid" class="error-msg"><div>Message must be at least 20 characters!</div></div>
+                        </div>
+                        <div id="btn-container"><button id="send-message" class="white-text">Send Message</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="map">
+            <div id="info">
+                <div class="white-text">Awesome Address 432</div>
+                <div class="white-text">ourmail@sometype.com</div>
+                <div class="white-text">+321(0)32 123 343 492</div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="footer-container">
+            <button id="go-up-btn" class="circle-btn" ng-click="scrollTo($event, 'landing')"></button>
+            <span class="white-text">© 2014 - <span class="cyan-text">Kat</span> All Right Reserved</span>
+        </div>
+    </footer>

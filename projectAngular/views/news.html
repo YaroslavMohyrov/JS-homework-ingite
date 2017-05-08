@@ -1,0 +1,13 @@
+<div id="news-container">
+    <div class="news-item">
+        <div class="news-date">
+            <div class="news-date-day cyan-text">{{news[id].date | date: "dd"}}</div>
+            <div class="news-date-mon">{{news[id].date | date : "MMMM"}}</div>
+        </div>
+        <div class="news-content">
+            <div class="news-description">{{news[id].text}}</div>
+            <div class="news-ref"><a class="cyan-text" ng-href="#/main">Back</a></div>
+            <div class="news-separator"></div>
+        </div>
+    </div>
+</div>

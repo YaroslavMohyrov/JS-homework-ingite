@@ -1,45 +1,31 @@
 <!DOCTYPE HTML>
-<html ng-app="landingKet">
+<html ng-app="appModule">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/angular-carousel.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.0/angular-scroll.min.js"></script>
+    <script src="./scripts/angular-carousel.min.js"></script>
+    <script src="./scripts/angular-count-to.js"></script>
+    <script src="./scripts/angular-inview.js"></script>
+    <script>
+        var appModule = angular.module('appModule', ['duScroll', 'angular-carousel', 'countTo', 'angular-inview', 'ngRoute'])
+        .factory('Shared', function() {
+            return { news: [] }
+        })
+    </script>
+    <script src="router.config.js"></script>
+    <script src="./controllers/main-controller.js"></script>
+    <script src="./controllers/news-controller.js"></script>
+    <script src="./scripts/team.js"></script>
+
 </head>
 <body>
-    <header>
-        <div class="container">
-            <img id="logo" src="./img/logo.svg">
-            <ul id="menu">
-                <li>
-                    <a href="#home">HOME</a>
-                    <div class="menu-item-hover"></div>
-                </li>
-                <li>
-                    <a href="#services">SERVICES</a>
-                    <div class="menu-item-hover"></div>
-                </li>
-                <li>
-                    <a href="#work">PORTFOLIO</a>
-                    <div class="menu-item-hover"></div>
-                </li>
-                <li>
-                    <a href="#about">ABOUT</a>
-                    <div class="menu-item-hover"></div>
-                </li>
-                <li>
-                    <a href="#clients">NEWS</a>
-                    <div class="menu-item-hover"></div>
-                </li>
-                <li>
-                    <a href="#contact">CONTACT</a>
-                    <div class="menu-item-hover"></div>
-                </li>
-            </ul>
-        </div>
-    </header>
-    <main></main>
+    <ng-view></ng-view>
 </body>
 </html>
